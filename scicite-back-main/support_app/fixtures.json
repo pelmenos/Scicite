@@ -1,0 +1,46 @@
+[
+{
+    "model": "support_app.supportstatus",
+    "pk": "00b6a39b-53eb-4f2f-89db-22b27d224374",
+    "fields": {
+        "code": 10,
+        "name": "resolved",
+        "description": ""
+    }
+},
+{
+    "model": "support_app.supportstatus",
+    "pk": "7e31fedf-df3b-4399-a949-c5278f458e70",
+    "fields": {
+        "code": 20,
+        "name": "in_progress",
+        "description": ""
+    }
+},
+{
+    "model": "support_app.supportstatus",
+    "pk": "9d8d2c97-7072-45c7-9db5-3b566c0b1307",
+    "fields": {
+        "code": 30,
+        "name": "open",
+        "description": ""
+    }
+},
+{
+    "model": "support_app.supportstatus",
+    "pk": "de6e4644-c5ff-4e3a-9e39-4b2c41b9a1dc",
+    "fields": {
+        "code": 40,
+        "name": "rejected",
+        "description": ""
+    }
+},
+{
+    "model": "support_app.supporttype",
+    "pk": "5f64962e-1635-4e3d-b073-9b96c57d130d",
+    "fields": {
+        "name": "dispute",
+        "description": ""
+    }
+}
+]

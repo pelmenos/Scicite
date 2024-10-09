@@ -1,0 +1,133 @@
+@import 'app/styles/mixins/breakpoint.scss';
+
+.substrate {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1001;
+
+    background-color: rgba($color: #000000, $alpha: 0.3);
+
+    width: 100%;
+    height: 100%;
+
+    @include small-tablet {
+        position: unset;
+        width: auto;
+        height: auto;
+    }
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+}
+
+.modalReplenishment {
+    cursor: default;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 270px;
+    background-color: var(--light-color);
+    padding: 23px 20px;
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+
+    @include small-tablet {
+        top: 3.1875rem;
+        transform: translate(-50%, 0);
+
+        width: 31.0625rem;
+        padding: 1.0625rem 2.5rem;
+        row-gap: 0.9375rem;
+    }
+
+    &__title {
+        margin: 0;
+
+        text-align: center;
+        font-size: 1rem;
+        font-weight: 700;
+        color: var(--dark-color);
+        text-transform: uppercase;
+    }
+
+    &__field {
+        height: 23px;
+        border: 2px solid var(--main-color);
+        border-radius: 8px;
+        background-color: var(--light-color);
+
+        padding: 0 4px;
+
+        font-size: 1rem;
+        font-weight: 400;
+        color: var(--dark-color);
+        text-transform: uppercase;
+
+        @include small-tablet {
+            height: 2rem;
+            padding: 0 1.5em;
+        }
+
+        &::placeholder {
+            font-size: inherit;
+            font-weight: inherit;
+            color: inherit;
+            text-transform: inherit;
+        }
+    }
+
+    &__btnSub {
+        margin: 0 auto;
+        width: 93px;
+        padding: 4px;
+
+        @include small-tablet {
+            width: 8.1875em;
+            padding: 0.375em 0.5625em;
+        }
+    }
+}
+
+.view {
+    animation: viewModal 1s;
+}
+
+.hidden {
+    animation: hiddModal 1s;
+}
+
+@keyframes viewModal {
+    0% {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    100% {
+        opacity: 1;
+        pointer-events: all;
+    }
+}
+
+@keyframes hiddModal {
+    0% {
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    100% {
+        opacity: 0;
+        pointer-events: none;
+    }
+}

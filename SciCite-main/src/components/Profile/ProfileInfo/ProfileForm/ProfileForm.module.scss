@@ -1,0 +1,138 @@
+.profileForm {
+    display: flex;
+    flex-direction: column;
+
+    &__field {
+        width: 100%;
+
+        padding: 0.375em 1.5em;
+
+        border-radius: 0.5em;
+        border: 2px solid var(--main-color);
+        background: #F8F8F8;
+
+        font-size: 1rem;
+        font-weight: 400;
+        color: var(--dark-color);
+        text-transform: uppercase;
+
+        &::placeholder {
+            font-size: inherit;
+            font-weight: inherit;
+            color: inherit;
+            text-transform: inherit;
+        }
+
+        &:focus::placeholder {
+            color: transparent;
+        }
+    }
+
+    &__btnSub {
+        font-size: 1rem;
+        font-weight: 400;
+        color: var(--dark-color);
+        text-transform: uppercase;
+        text-decoration: underline;
+    }
+}
+
+.inputWrapper {
+        margin-bottom: 0.9375em;
+
+}
+
+.fieldError {
+    border-color: var(--error-color);
+}
+
+.errorText {
+    padding-left: 0.5em;
+    font-size: 0.75rem;
+    font-weight: 500;
+    line-height: 1.4em;
+    letter-spacing: -0.01em;
+    color: var(--error-color);
+}
+
+.reactTelInput {
+	position: relative;
+}
+
+.flagDropdown {
+	position: absolute;
+    top: 0;
+    bottom: 0;
+    padding: 0;
+    background-color: transparent !important;
+	border-top: 1px solid #2F7EB8 !important;
+    border-bottom: 1px solid #2F7EB8 !important;
+	border-left: none !important;
+	border-right: none !important;
+    border-radius: 9px 0 0 9px !important;
+
+	& > div {
+		outline: none;
+		position: relative;
+		width: 38px;
+		height: 100%;
+		padding: 0 0 0 8px;
+		background-color: transparent !important;
+		border-radius: 9px 0 0 9px !important;
+
+		& > div {
+			position: absolute;
+			top: 50%;
+			margin-top: -5px;
+			background-position: center;
+		}
+	}
+}
+
+.dropdown {
+	width: 23.875rem !important;
+}
+
+.input {
+    width: 100% !important;
+
+    border-radius: 0.5em !important;
+    border-top: 2px solid #2F7EB8 !important;
+    border-bottom: 2px solid #2F7EB8 !important;
+    background: var(--light-color) !important;
+	height: auto !important;
+
+    font-size: 1rem !important;
+	line-height: normal !important;
+    font-weight: 400 !important;
+    color: var(--dark-color) !important;
+
+    &::placeholder {
+        font-size: inherit !important;
+        font-weight: inherit !important;
+        color: inherit !important;
+        text-transform: inherit !important;
+    }
+
+    &:active,
+    &:focus {
+        border-color: var(--biscay-color);
+    }
+
+    &:disabled {
+
+        border: 1px solid #d9d9d9;
+
+        &::placeholder {
+            color: #d9d9d9;
+        }
+    }
+}
+
+.input[aria-invalid=true] {
+    border-color: var(--error-color) !important;
+}
+
+.positive {
+    border-color: #2eb200 !important;
+}

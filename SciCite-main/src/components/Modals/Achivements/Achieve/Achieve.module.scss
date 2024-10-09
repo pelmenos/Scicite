@@ -1,0 +1,65 @@
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 39.9375rem;
+    height: 29.3125rem;
+
+    background-color: #2e7eb8;
+    padding: 3.3125rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    color: var(--light-color);
+}
+
+.title {
+    margin: 0;
+
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.achive {
+    position: relative;
+
+    & svg {
+        width: 12.5rem;
+        height: 12.5rem;
+    }
+
+    & .sum {
+        display: block;
+
+        position: absolute;
+        bottom: 0.2222em;
+        right: -15%;
+
+        border-radius: 0.2432em;
+        background: var(--biscay-color);
+
+        padding: 0.1081em 0.5676em;
+
+        color: var(--light-color);
+        font-size: 2.3125rem;
+        font-weight: 900;
+        text-transform: uppercase;
+    }
+}
+
+.btn {
+    border-radius: 0.5625rem;
+    background: #d9d9d9;
+    padding: 0.625em 0.9375em;
+
+    color: var(--light-color);
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}

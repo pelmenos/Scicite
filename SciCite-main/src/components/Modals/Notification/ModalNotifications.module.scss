@@ -1,0 +1,247 @@
+@import 'app/styles/mixins/breakpoint.scss';
+
+.substrate {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1010;
+
+    width: 100%;
+    height: 100%;
+
+    @include small-tablet {
+        position: unset;
+        width: auto;
+        height: auto;
+    }
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+    width: 100vw;
+    height: 100vh;
+}
+
+.wrapper {
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 249px;
+
+    @include small-tablet {
+        position: unset;
+        width: auto;
+        height: auto;
+    }
+}
+
+.modalNotifications {
+    cursor: default;
+
+    width: 100%;
+
+    max-height: 249px;
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+        width: 0;
+    }
+
+    background-color: var(--light-color);
+
+    display: flex;
+    flex-direction: column;
+
+    @include small-tablet {
+        position: fixed;
+        top: 3.625rem;
+        left: unset;
+        z-index: 1;
+
+        width: 21.9375rem;
+        padding: 0 1.25rem;
+        padding-top: 0.875rem;
+    }
+
+    @include tablet {
+        top: 3.7143rem;
+    }
+
+    @include big-tablet {
+        top: 3.625rem;
+    }
+
+    @include for-desktop {
+        top: 3.7143rem;
+    }
+
+    @include big-desktop {
+        top: 3.625rem;
+    }
+}
+
+.btn {
+    order: 1;
+
+    margin: 0 auto;
+    width: fit-content;
+    min-height: 43px;
+    font-size: 1.1667rem;
+    font-weight: 400;
+    color: var(--dark-color);
+    text-transform: uppercase;
+
+    @include small-tablet {
+        order: unset;
+
+        margin: 0;
+        margin-bottom: 2.2143em;
+
+        min-height: auto;
+
+        font-size: 0.875rem;
+    }
+}
+
+.list {
+    user-select: none;
+    cursor: pointer;
+
+    display: flex;
+    flex-direction: column;
+
+    @include small-tablet {
+        row-gap: 0.8125rem;
+        max-height: 16.125rem;
+        max-height: 249px;
+        overflow-y: scroll;
+
+        &::-webkit-scrollbar {
+            width: 0;
+        }
+    }
+}
+
+.item {
+    position: relative;
+
+    padding: 0 50px;
+
+    min-height: 43px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid var(--dark-color);
+
+    text-align: center;
+
+    font-size: 1.1667rem;
+    font-weight: 400;
+    color: var(--dark-color);
+    text-transform: uppercase;
+
+    @include small-tablet {
+        padding: 0;
+
+        display: initial;
+        text-align: start;
+        width: auto;
+        min-height: auto;
+        padding-left: 1.9286em;
+        border: none;
+
+        font-size: 0.875rem;
+    }
+
+    &::before {
+        position: absolute;
+        top: 0.4286em;
+        left: 0;
+
+        display: block;
+        width: 0.5em;
+        height: 0.5em;
+        border-radius: 50%;
+        background-color: var(--main-color);
+
+        @include small-tablet {
+            content: '';
+        }
+    }
+}
+
+.line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 7px;
+    background-color: var(--main-color);
+
+    @include small-tablet {
+        display: none;
+    }
+}
+
+.view {
+    animation: viewModalMob 1s;
+
+    @include small-tablet {
+        animation: viewModal 1s;
+    }
+}
+
+.hidden {
+    animation: hiddModalMob 1s;
+
+    @include small-tablet {
+        animation: hiddModal 1s;
+    }
+}
+
+@keyframes viewModal {
+    0% {
+        transform: translate(0, -100%);
+
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes viewModalMob {
+    0% {
+        transform: translate(0, -100%);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes hiddModal {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(0, -100%);
+    }
+}
+
+@keyframes hiddModalMob {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(0, -100%);
+    }
+}

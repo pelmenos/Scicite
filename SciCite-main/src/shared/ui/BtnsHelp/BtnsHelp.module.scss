@@ -1,0 +1,234 @@
+@import "app/styles/mixins/disable-mob-hover.scss";
+@import "app/styles/mixins/breakpoint.scss";
+
+.btnsContainer {
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 135px;
+  left: 0;
+
+  width: 100%;
+  height: 2.375em;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: right;
+
+  @include small-tablet {
+    justify-content: space-between;
+  }
+}
+
+.btnAddCard {
+  position: fixed;
+  bottom: 0;
+  left: 1.25rem;
+  z-index: 1000;
+
+  margin-bottom: 2.5rem;
+
+  background-color: var(--main-color);
+  overflow: hidden;
+  height: 2.375em;
+  border-radius: 50px;
+
+  display: flex;
+  column-gap: 10px;
+  align-items: center;
+
+  padding: 0.5rem 0.49rem;
+
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--light-color);
+  text-transform: uppercase;
+
+  @include big-mobile {
+    left: calc(50% - (var(--content-width-bm)) / 2 - 2.5rem);
+  }
+
+  @include small-tablet {
+    left: calc(50% - (var(--content-width-st)) / 2 - 2.5rem);
+  }
+
+  @include tablet {
+    left: calc(50% - (var(--content-width-t)) / 2 - 2.5rem);
+  }
+
+  @include big-tablet {
+    left: calc(50% - (var(--content-width-bt)) / 2 - 2.5rem);
+  }
+
+  @include for-desktop {
+    left: calc(50% - (var(--content-width-xl)) / 2 - 2.5rem);
+  }
+
+  @include big-desktop {
+    left: calc(50% - (var(--content-width-xxl)) / 2 - 2.5rem);
+  }
+
+  & svg {
+    min-width: 1.4375rem;
+    width: 100%;
+    max-width: 1.4375rem;
+    min-height: 1.4375rem;
+    height: 100%;
+    max-height: 1.4375rem;
+  }
+
+  max-width: unset;
+
+  & span {
+    display: inline;
+  }
+
+  @include hover {
+    max-width: unset;
+
+    & span {
+      display: inline;
+    }
+  }
+
+  @include small-tablet {
+    max-width: 2.375em;
+
+    & span {
+      display: none;
+    }
+  }
+}
+
+.howUsePosBtnAdd {
+  @include big-mobile {
+    left: calc(50% - (var(--content-width-bm)) / 2 - 1.25rem);
+  }
+
+  @include small-tablet {
+    left: calc(50% - (var(--content-width-st)) / 2 - 1.25rem);
+  }
+
+  @include tablet {
+    left: calc(50% - (var(--content-width-t)) / 2 - 1.25rem);
+  }
+
+  @include big-tablet {
+    left: calc(50% - (var(--content-width-bt)) / 2 - 1.25rem);
+  }
+
+  @include for-desktop {
+    left: calc(50% - (var(--content-width-xl)) / 2 - 1.25rem);
+  }
+
+  @include big-desktop {
+    left: calc(50% - (var(--content-width-xxl)) / 2 - 1.25rem);
+  }
+}
+
+.btnHelp {
+  position: fixed;
+  bottom: 0;
+  right: 1.25rem;
+  z-index: 1000;
+
+  display: none;
+
+  margin-bottom: 2.5rem;
+
+  column-gap: 10px;
+  align-items: center;
+
+  padding: 0.5rem 0.49rem;
+
+  overflow: hidden;
+  max-width: 2.375em;
+  height: 2.375em;
+  background-color: #d9d9d9;
+  border-radius: 50px;
+
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--dark-color);
+  text-transform: uppercase;
+
+  @include big-mobile {
+    right: calc(50% - (var(--content-width-bm)) / 2 - 2.5rem);
+  }
+
+  @include small-tablet {
+    display: flex;
+    right: calc(50% - (var(--content-width-st)) / 2 - 2.5rem);
+  }
+
+  @include tablet {
+    right: calc(50% - (var(--content-width-t)) / 2 - 2.5rem);
+  }
+
+  @include big-tablet {
+    right: calc(50% - (var(--content-width-bt)) / 2 - 2.5rem);
+  }
+
+  @include for-desktop {
+    right: calc(50% - (var(--content-width-xl)) / 2 - 2.5rem);
+  }
+
+  @include big-desktop {
+    right: calc(50% - (var(--content-width-xxl)) / 2 - 2.5rem);
+  }
+
+
+  & span {
+    display: none;
+  }
+
+  & svg {
+    min-width: 1.375rem;
+    width: 100%;
+    max-width: 1.375rem;
+    min-height: 1.375rem;
+    height: 100%;
+    max-height: 1.375rem;
+  }
+
+  @include hover {
+    max-width: unset;
+
+    & span {
+      display: inline;
+    }
+  }
+}
+
+.howUsePosBtnHelp {
+  @include big-mobile {
+    right: calc(50% - (var(--content-width-bm)) / 2 - 1.25rem);
+  }
+
+  @include small-tablet {
+    display: flex;
+
+    right: calc(50% - (var(--content-width-st)) / 2 - 1.25rem);
+  }
+
+  @include tablet {
+    right: calc(50% - (var(--content-width-t)) / 2 - 1.25rem);
+  }
+
+  @include big-tablet {
+    right: calc(50% - (var(--content-width-bt)) / 2 - 1.25rem);
+  }
+
+  @include for-desktop {
+    right: calc(50% - (var(--content-width-xl)) / 2 - 1.25rem);
+  }
+
+  @include big-desktop {
+    right: calc(50% - (var(--content-width-xxl)) / 2 - 1.25rem);
+  }
+}

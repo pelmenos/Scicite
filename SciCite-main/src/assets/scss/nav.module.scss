@@ -1,0 +1,39 @@
+@import 'app/styles/mixins/disable-mob-hover.scss';
+@import 'app/styles/mixins/breakpoint.scss';
+
+.nav {
+    &__list {
+        display: flex;
+        column-gap: 49px;
+    }
+
+    &__item {
+        display: inline-block;
+        font-size: 0;
+    }
+
+    &__link {
+        vertical-align: bottom;
+        font-size: 1rem;
+        font-weight: 500;
+        color: var(--light-color);
+        text-transform: uppercase;
+
+        &::before {
+            display: block;
+            content: attr(title);
+            font-weight: 700;
+            height: 0;
+            overflow: hidden;
+            visibility: hidden;
+        }
+
+        @include hover {
+            font-weight: 700;
+        }
+    }
+}
+
+.currentLink {
+    font-weight: 700;
+}

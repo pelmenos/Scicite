@@ -1,0 +1,262 @@
+@import 'app/styles/mixins/disable-mob-hover.scss';
+@import 'app/styles/mixins/breakpoint.scss';
+
+.substrate {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1001;
+
+    background-color: rgba($color: #000000, $alpha: 0.3);
+
+    width: 100%;
+    height: 100%;
+
+    @include small-tablet {
+        position: static;
+        width: auto;
+        height: auto;
+    }
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+}
+
+.searchFilter {
+    cursor: default;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 324px;
+    height: 100%;
+    background-color: var(--light-color);
+    padding-top: 6.4vh;
+    padding-left: 20px;
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+
+    @include small-tablet {
+        position: absolute;
+        top: 0.1875rem;
+        left: 6.5625rem;
+        z-index: 10;
+        display: flex;
+        flex-direction: row;
+        row-gap: unset;
+        justify-content: space-between;
+
+        background-color: var(--light-color);
+        box-shadow: 0px 0px 0.25rem 0px rgba(0, 0, 0, 0.25);
+
+        padding: 0 2.5rem;
+        padding-top: 0.875rem;
+        padding-bottom: 1.4375rem;
+
+        max-width: 38.75rem;
+        width: 100vh;
+        height: auto;
+    }
+
+    &__block {
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    &__title {
+        margin: 0;
+        margin-bottom: 20px;
+
+
+        font-size: 1rem;
+        font-weight: 700;
+        color: var(--dark-color);
+        text-transform: uppercase;
+
+        @include small-tablet {
+            margin-bottom: 1.125em;
+
+            max-width: 14.0625em;
+
+            padding-bottom: 0.5em;
+            border-bottom: 2px solid var(--main-color);
+        }
+    }
+
+    &__fieldWrapper {
+
+        &:not(:last-child) {
+            margin-bottom: 17px;
+        }
+
+        display: flex;
+        align-items: center;
+        column-gap: 8px;
+
+        font-size: 1rem;
+        font-weight: 400;
+        color: var(--dark-color);
+        text-transform: uppercase;
+
+        @include small-tablet {
+            column-gap: 0.9286em;
+
+            font-size: 0.875rem;
+
+            &:not(:last-child) {
+                margin-bottom: 1.1429em;
+            }
+        }
+    }
+
+    &__field {
+        margin: 0;
+
+        width: 1.3333rem;
+        height: 1.3333rem;
+        aspect-ratio: 1/1;
+
+        border: 2px solid var(--main-color);
+        border-radius: 0.3125rem;
+
+        @include small-tablet {
+            width: 1.25rem;
+            height: 1.25rem;
+        }
+
+        @include hover {
+            border-color: #569ED4;
+        }
+
+        &:active {
+            border-color: #1A4666;
+        }
+
+        &:checked {
+            background-color: var(--main-color);
+            background-image: url(../../../assets/img/svg/tick.svg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 0.875rem 0.75rem;
+
+            @include hover {
+                background-color: #569ED4;
+            }
+
+            &:active {
+                background-color: #1A4666;
+            }
+        }
+
+        &:disabled {
+            border-color: #D9D9D9;
+
+            @include hover {
+                background-color: #D9D9D9;
+            }
+
+            &:active {
+                background-color: #D9D9D9;
+            }
+        }
+    }
+
+    &__bottom {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 6vh;
+        background-color: var(--main-color);
+
+        @include small-tablet {
+            display: none;
+        }
+    }
+}
+
+.view {
+    animation: viewMob 1s;
+
+    @include small-tablet {
+        animation: view 1s;
+    }
+}
+
+.hidden {
+    animation: hiddMob 1s;
+
+    @include small-tablet {
+        animation: hidd 1s;
+    }
+}
+
+@keyframes viewMob {
+    0% {
+        background-color: rgba($color: #000000, $alpha: 0);
+    }
+
+    100% {
+        background-color: rgba($color: #000000, $alpha: 0.3);
+    }
+}
+
+@keyframes hiddMob {
+    0% {
+        background-color: rgba($color: #000000, $alpha: 0.3);
+    }
+
+    100% {
+        background-color: rgba($color: #000000, $alpha: 0);
+    }
+}
+
+.viewModal {
+    animation: viewModal 1s;
+
+    @include small-tablet {
+        animation: none;
+    }
+}
+
+.hiddenModal {
+    animation: hiddModal 1s;
+
+    @include small-tablet {
+        animation: none;
+    }
+}
+
+@keyframes viewModal {
+    0% {
+        transform: translate(-324px, 0);
+        pointer-events: none;
+    }
+
+    100% {
+        transform: translate(0, 0);
+        pointer-events: all;
+    }
+}
+
+@keyframes hiddModal {
+    0% {
+        transform: translate(0, 0);
+        pointer-events: all;
+    }
+
+    100% {
+        transform: translate(-324px, 0);
+        pointer-events: none;
+    }
+}

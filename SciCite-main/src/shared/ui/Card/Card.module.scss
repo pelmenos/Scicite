@@ -1,0 +1,201 @@
+@import 'app/styles/mixins/disable-mob-hover.scss';
+@import 'app/styles/mixins/breakpoint.scss';
+
+.card {
+    cursor: default;
+
+    position: relative;
+
+    max-width: 15.6667rem;
+    width: 100%;
+
+    box-shadow: 0px 0.25rem 0.25rem 0px rgba(0, 0, 0, 0.25);
+
+    @include small-tablet {
+        max-width: 16.25rem;
+    }
+
+    &::after {
+        display: block;
+        width: calc(100% - 2px);
+        height: calc(100% - 2px);
+
+        border: 1px solid var(--main-color);
+
+        position: absolute;
+        top: 1px;
+        left: 1px;
+        z-index: -2;
+
+        transition: transform 0.3s ease-in-out;
+
+        @include small-tablet {
+            content: '';
+        }
+    }
+
+    @include hover {
+        &::after {
+            transform: translate(0.75rem, 0.75rem);
+        }
+    }
+}
+
+.hoverShow {
+    @include hover {
+        .cardTitle {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 2;
+
+            padding-top: 0.875rem;
+            padding-right: 0.6875rem;
+            margin-bottom: 0.5625rem;
+            padding-left: 1.25rem;
+
+            display: -webkit-box;
+            max-width: 100%;
+            -webkit-line-clamp: 6;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+
+
+            animation: title 1s ease;
+        }
+
+        .top {
+            & img {
+                z-index: 1;
+                animation: img 0.1s ease;
+            }
+        }
+    }
+}
+
+.currentCard {
+    &::after {
+        transform: translate(0.75rem, 0.75rem);
+    }
+}
+
+.top {
+    position: relative;
+
+    max-width: 16.25rem;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 260/138;
+
+    padding: 6px 18px;
+
+    @include small-tablet {
+        padding-top: 0.875rem;
+        padding-right: 0.6875rem;
+        padding-left: 1.25rem;
+    }
+
+    & img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: -1;
+        transform: translate(-50%, -50%);
+
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.topAdmin {
+    position: relative;
+    z-index: 1;
+
+    width: 100%;
+    height: 8.625rem;
+    aspect-ratio: 260/138;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    & img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: -1;
+        transform: translate(-50%, -50%);
+
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.cardTitle {
+    margin: 0;
+
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--dark-color);
+    text-transform: uppercase;
+
+    display: -webkit-box;
+    max-width: 100%;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.adminTitle {
+    margin: 0;
+
+    padding-right: 0.6875em;
+    margin-bottom: 0.5625em;
+    padding-left: 1.25em;
+
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--dark-color);
+    text-transform: uppercase;
+
+    display: -webkit-box;
+    max-width: 100%;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.bottom {
+    background-color: var(--light-color);
+    padding: 10px 18px;
+    padding-top: 5px;
+
+    @include small-tablet {
+        padding: 1.0625rem 1.25rem;
+    }
+}
+
+@keyframes title {
+    0% {
+        opacity: 0;
+
+    }
+
+    100% {
+        opacity: 1;
+        z-index: 2;
+    }
+}
+
+@keyframes img {
+    0% {
+        z-index: -1;
+    }
+
+    100% {
+        z-index: 1;
+    }
+}

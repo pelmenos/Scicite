@@ -1,0 +1,26 @@
+@import 'app/styles/mixins/breakpoint.scss';
+
+.searchList {
+    display: flex;
+    column-gap: 5rem;
+
+    &__list {
+        overflow-y: scroll;
+        max-width: 85rem;
+        width: 100%;
+
+        max-height: 100vh;
+        height: 100vh;
+
+        @include small-tablet {
+            max-height: calc(100vh - (8.4375rem));
+        }
+
+        padding: 0 0.3125rem;
+        padding-bottom: 0.25rem;
+
+        &::-webkit-scrollbar {
+            width: 0;
+        }
+    }
+}

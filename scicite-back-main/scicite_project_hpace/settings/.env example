@@ -1,0 +1,15 @@
+DB_NAME=scicite
+DB_USER=scicite_user
+DB_PASSWORD=qwerty123
+DB_HOST=localhost
+DB_PORT=5432
+SECRET_KEY=secret_key_random_strins
+DEBUG=False
+
+STATIC_URL=/static/
+MEDIA_URL=/media/
+
+EMAIL_HOST=smtp.yandex.ru
+EMAIL_PORT=465
+EMAIL_HOST_USER=info@yandex.ru
+EMAIL_HOST_PASSWORD=JFASFNUU542385

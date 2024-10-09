@@ -1,0 +1,48 @@
+@import 'app/styles/mixins/breakpoint.scss';
+
+.myCards {
+    position: relative;
+    padding-top: 1.875rem;
+    height: 100vh;
+    min-height: calc(100vh - 55px);
+
+    background-color: var(--light-gray-color);
+
+    @include small-tablet {
+        min-height: calc(100vh - 5.25rem);
+    }
+
+    @include big-desktop {
+        min-height: 62.1875rem;
+    }
+  
+    &__toogleBlock {
+        display: flex;
+        justify-content: start;
+        column-gap: 10px;
+        width: 100%;
+
+        @include small-tablet {
+            justify-content: center;
+            column-gap: 2.125rem;
+        }
+    }
+
+    &__btnToogle {
+        padding: 2px 4px;
+
+        @include small-tablet {
+            padding: 0;
+
+            width: 14.0625em;
+            padding-bottom: 0.5em;
+
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--dark-color);
+            text-transform: uppercase;
+
+            border-bottom: 2px solid var(--main-color);
+        }
+    }
+}

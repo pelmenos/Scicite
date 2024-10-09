@@ -1,0 +1,150 @@
+@import 'app/styles/mixins/breakpoint.scss';
+
+.substrate {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1010;
+
+    width: 100%;
+    height: 100%;
+
+    @include small-tablet {
+        background-color: rgba($color: #000000, $alpha: 0.3);
+    }
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+}
+
+.modalInsuff {
+    user-select: none;
+    cursor: default;
+
+    position: absolute;
+    top: -100%;
+
+    left: 0;
+    z-index: 1010;
+
+    width: 100%;
+    background-color: var(--light-color);
+    padding: 13px 34px;
+    border-radius: 0px 0px 10px 10px;
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+
+    @include small-tablet {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        border-radius: unset;
+
+        width: 17.375rem;
+
+        padding: 1.0625rem 2.5rem;
+    }
+
+    &__title {
+        margin: 0;
+
+        text-align: center;
+        font-size: 0.875rem;
+        font-weight: 400;
+        color: var(--dark-color);
+        text-transform: uppercase;
+    }
+
+    &__btnClose {
+        display: none;
+        margin: 0 auto;
+
+        max-width: 134px;
+        padding: 6px;
+
+        @include small-tablet {
+            display: block;
+
+            max-width: 8.375em;
+            padding: 0.375em;
+        }
+    }
+}
+
+.viewModal {
+    animation: viewModalMob 2s;
+
+    @include small-tablet {
+        animation: viewModal 1s;
+    }
+}
+
+.hiddenModal {
+
+    @include small-tablet {
+        animation: hiddModalMob 1s;
+    }
+}
+
+@keyframes viewModalMob {
+    0% {
+        top: -100%;
+    }
+
+    25% {
+        top: 0;
+    }
+
+    50% {
+        top: 0;
+    }
+
+    75% {
+        top: 0;
+    }
+
+    100% {
+        top: -100%;
+    }
+}
+
+.view {
+    animation: viewModal 1s;
+}
+
+.hidden {
+    animation: hiddModal 1s;
+}
+
+@keyframes viewModal {
+    0% {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    100% {
+        opacity: 1;
+        pointer-events: all;
+    }
+}
+
+@keyframes hiddModal {
+    0% {
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    100% {
+        opacity: 0;
+        pointer-events: none;
+    }
+}

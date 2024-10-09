@@ -1,0 +1,69 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ../scicite-back-main
+    container_name: scicite_backend
+    command: gunicorn scicite_project_hpace.wsgi:application --bind 0.0.0.0:8000
+    restart: always
+    expose:
+      - 8000
+    volumes:
+      - static_volume:/home/app/web/staticfiles
+      - media_volume:/home/app/web/mediafiles
+    env_file:
+      - ../scicite-back-main/scicite_project_hpace/settings/.env
+    depends_on:
+      - db
+    networks:
+      - app-network
+#
+#  frontend:
+#    container_name: scicite_frontend
+#    build:
+#      context: ../SciCite-main
+#      dockerfile: Dockerfile
+#    volumes:
+#      - ../SciCite-main/build/:/app/build/
+#      - ../SciCite-main/public/:/app/public/
+#      - ../SciCite-main/src/:/app/src/
+
+  db:
+    image: postgres:14-alpine
+    container_name: scicite_db
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    env_file:
+      - ../scicite-back-main/scicite_project_hpace/settings/.env
+    environment:
+      POSTGRES_DB: '${DB_NAME:-scicite}'
+      POSTGRES_USER: '${DB_USER:-postgres}'
+      POSTGRES_PASSWORD: '${DB_PASSWORD:-QWEasd123}'
+    networks:
+      - app-network
+
+  nginx:
+    build:
+      context: ../
+      dockerfile: ./deploy/nginx/Dockerfile
+    container_name: scicite_nginx
+    restart: on-failure
+    ports:
+      - 80:80
+    volumes:
+      - static_volume:/home/app/web/staticfiles
+      - media_volume:/home/app/web/mediafiles
+    depends_on:
+      - backend
+    networks:
+      - app-network
+
+volumes:
+  postgres_data:
+  frontend:
+  static_volume:
+  media_volume:
+
+networks:
+  app-network:

@@ -1,0 +1,116 @@
+.substrate {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1010;
+
+    background-color: rgba($color: #000000, $alpha: 0.3);
+
+    width: 100%;
+    height: 100%;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+}
+
+.modalExample {
+    cursor: default;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    max-width: 94.5625rem;
+    width: 100%;
+
+    background-color: var(--light-color);
+    padding: 2rem 0;
+    padding-right: 3.4375rem;
+    padding-left: 4.875rem;
+}
+
+.info {
+    padding-right: 1.4375rem;
+}
+
+.title {
+    margin: 0;
+    margin-bottom: 4.875em;
+
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--dark-color);
+    text-transform: uppercase;
+}
+
+.exampleList {
+    margin-bottom: 4.625rem;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.exampleItem {
+    & img {
+        margin-bottom: 2rem;
+
+        width: 26.5rem;
+        height: auto;
+        aspect-ratio: 424/535;
+    }
+}
+
+.titleImg {
+    margin: 0;
+
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--dark-color);
+    text-transform: uppercase;
+}
+
+.btn {
+    float: right;
+    max-width: 11.875em;
+    width: 100%;
+    padding: 0.625em 0;
+}
+
+.view {
+    animation: viewModal 1s;
+}
+
+.hidden {
+    animation: hiddModal 1s;
+}
+
+@keyframes viewModal {
+    0% {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    100% {
+        opacity: 1;
+        pointer-events: all;
+    }
+}
+
+@keyframes hiddModal {
+    0% {
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    100% {
+        opacity: 0;
+        pointer-events: none;
+    }
+}

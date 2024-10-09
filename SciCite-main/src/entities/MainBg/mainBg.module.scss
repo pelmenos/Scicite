@@ -1,0 +1,142 @@
+@import 'app/styles/mixins/breakpoint.scss';
+
+.bg {
+    position: absolute;
+    top: 168.75rem /* 2700px */;
+    right: 0;
+    z-index: -1;
+    background-image: url(../../assets/img/main-bg.png);
+    background-position: -2.6875rem 0 /* -43px 0 */;
+    background-repeat: repeat-y;
+    background-size: 68.5rem 176.0625rem /* 1096px 2817px */;
+    width: 68.5rem /* 1096px */;
+    height: 176.0625rem /* 2817px */;
+
+    animation: slide 200s linear infinite;
+
+    &:first-child {
+        top: 0;
+        background-position: 17.375rem 0 /* 278px */;
+    }
+}
+
+.bcEn {
+    background-image: url(../../assets/img/main-bg_en.png);
+}
+
+@keyframes slide {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+
+    100% {
+        transform: translate3d(20.0625rem, -168.75rem, 0) /* 321px -2700px 0 */;
+    }
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(217, 217, 217, 0.50);
+}
+
+.bgMob {
+    position: absolute;
+    top: 750px /* 2495px */;
+    left: -225px /* -84.5vw */;
+    z-index: -1;
+    background-image: url(../../assets/img/main-bg_mob.png);
+    background-position: 0 0 /* 0 0 */;
+    background-repeat: repeat-y;
+    background-size: 232px 915px /* 687px 2730px */;
+    width: 232px /* 687px */;
+    height: 915px /* 2730px */;
+
+    animation: slideMob 25s linear infinite;
+
+    &:nth-child(2n - 1) {
+        top: -135px /* -135px */;
+    }
+
+    &:first-child {
+        left: -120px;
+    }
+
+    &:nth-child(3) {
+        left: 25px;
+        animation: slideMob 50s linear infinite;
+    }
+
+    &:nth-child(4) {
+        left: -80px;
+        animation: slideMob 50s linear infinite;
+    }
+
+    &:nth-child(5) {
+        left: 170px;
+        animation: slideMob 25s linear infinite;
+    }
+
+    &:nth-child(6) {
+        left: 65px;
+        animation: slideMob 25s linear infinite;
+    }
+
+    &:nth-child(7) {
+        left: 315px;
+        animation: slideMob 50s linear infinite;
+    }
+
+    &:nth-child(8) {
+        left: 210px;
+        animation: slideMob 50s linear infinite;
+    }
+
+    &:nth-child(9) {
+        left: 460px;
+        animation: slideMob 25s linear infinite;
+    }
+
+    &:nth-child(10) {
+        left: 355px;
+        animation: slideMob 25s linear infinite;
+    }
+
+    &:nth-child(11) {
+        left: 605px;
+        animation: slideMob 50s linear infinite;
+    }
+
+    &:nth-child(12) {
+        left: 500px;
+        animation: slideMob 50s linear infinite;
+    }
+
+    &:nth-child(13) {
+        left: 750px;
+        animation: slideMob 25s linear infinite;
+    }
+
+    &:nth-child(14) {
+        left: 645px;
+        animation: slideMob 25s linear infinite;
+    }
+}
+
+.bgMobEn {
+    background-image: url(../../assets/img/main-bg_mob_en.png);
+}
+
+@keyframes slideMob {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+
+    100% {
+        transform: translate3d(105px, -885px, 0) /* 310px -2630px 0 */;
+    }
+}

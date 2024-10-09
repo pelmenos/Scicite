@@ -1,0 +1,42 @@
+@import 'app/styles/mixins/breakpoint.scss';
+
+.myCardsOrderList {
+    overflow-y: scroll;
+    position: relative;
+    z-index: 1;
+
+    padding-top: 3.625rem;
+    padding-bottom: 0.75rem;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: start;
+    column-gap: 14px;
+    row-gap: 23px;
+
+    max-height: inherit;
+
+    &::-webkit-scrollbar {
+        width: 0;
+    }
+
+    @include small-tablet {
+        justify-content: start;
+        column-gap: 1.25rem;
+        row-gap: 1.25rem;
+        max-width: 43.375rem;
+        width: 100%;
+        padding-right: 0.75rem;
+        padding-bottom: 0.75rem;
+        padding-left: 3.625rem;
+    }
+
+    @include tablet {
+        padding-left: 7.625rem;  
+    }
+
+    @include big-desktop {
+        column-gap: 2.5rem;
+    }
+}

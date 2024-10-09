@@ -1,0 +1,136 @@
+.substrate {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1010;
+
+    background-color: rgba($color: #000000, $alpha: 0.3);
+
+    width: 100%;
+    height: 100%;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+}
+
+.modalRefuseConfirm {
+    user-select: none;
+
+    cursor: default;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    max-width: 28.9375rem;
+    width: 100%;
+
+    padding: 1.5625rem 1.375rem;
+    background-color: var(--light-color);
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.9375rem;
+}
+
+.title {
+    margin: 0;
+
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--dark-color);
+    text-transform: uppercase;
+}
+
+.attentionList {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.9375rem;
+}
+
+.attentionItem {
+    position: relative;
+
+    padding-left: 1.25em;
+
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--dark-color);
+    text-transform: uppercase;
+
+    &::before {
+        content: '';
+
+        position: absolute;
+        top: 0.3125em;
+        left: 0;
+
+        display: block;
+        width: 0.625em;
+        height: 0.625em;
+        border-radius: 50%;
+        background-color: var(--main-color);
+    }
+}
+
+.subtitle {
+    margin: 0;
+
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--dark-color);
+    text-transform: uppercase;
+}
+
+.btnsBlock {
+    display: flex;
+    justify-content: center;
+    column-gap: 2.875rem;
+}
+
+.btn {
+    max-width: 9.25em;
+    width: 100%;
+    padding: 0.25em;
+}
+
+.view {
+    animation: viewModal 1s;
+}
+
+.hidden {
+    animation: hiddModal 1s;
+}
+
+@keyframes viewModal {
+    0% {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    100% {
+        opacity: 1;
+        pointer-events: all;
+    }
+}
+
+@keyframes hiddModal {
+    0% {
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    100% {
+        opacity: 0;
+        pointer-events: none;
+    }
+}

@@ -1,0 +1,122 @@
+@import 'app/styles/mixins/breakpoint.scss';
+
+.profileInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__dataBlock {
+
+        &:not(:last-child) {
+            margin-bottom: 60px;
+
+            @include small-tablet {
+                margin-bottom: 4.25rem;
+            }
+        }
+
+        max-width: 23.3125rem;
+        width: 100%;
+    }
+
+    &__dataItem {
+
+        &:not(:last-child) {
+            margin-bottom: 15px;
+
+            @include small-tablet {
+                margin-bottom: 1rem;
+            }
+        }
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: 12px;
+
+        & svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        @include small-tablet {
+            column-gap: 0.625rem;
+
+            & svg {
+                width: 1.25rem;
+                height: 1.25rem;
+            }
+        }
+    }
+
+    &__text {
+        text-align: center;
+
+        font-size: 1rem;
+        font-weight: 400;
+        color: var(--dark-color);
+        text-transform: uppercase;
+    }
+
+    &__btnChange {
+        font-size: 1rem;
+        font-weight: 400;
+        color: var(--dark-color);
+        text-transform: uppercase;
+        text-decoration: underline;
+    }
+
+    &__btnChPas {
+        display: block;
+
+        margin: 0 auto;
+        margin-top: 1em;
+
+        padding: 4px;
+
+        @include small-tablet {
+            padding: 0.375em 0.375em;
+        }
+    }
+
+    &__statisticsList {
+        min-width: 24.75rem;
+    }
+
+    &__statisticsItem {
+        &:not(:last-child) {
+            margin-bottom: 15px;
+
+            @include small-tablet {
+                margin-bottom: 0.9375rem;
+            }
+        }
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__value {
+        min-width: 4.25em;
+
+        &:first-child {
+            min-width: 18em;
+
+            @include small-tablet {
+                min-width: 2.5em;
+            }
+        }
+
+        text-align: center;
+
+        font-size: 1rem;
+        font-weight: 400;
+        color: var(--dark-color);
+        text-transform: uppercase;
+    }
+}
+
+.valueAchevement {
+    padding: 0.375em 0.5625em;
+}

@@ -1,0 +1,183 @@
+@import 'app/styles/mixins/disable-mob-hover.scss';
+@import 'app/styles/mixins/breakpoint.scss';
+
+.responsesList {
+    &__container {
+        position: relative;
+        z-index: 1;
+
+        padding: 0.75rem;
+        padding-top: 4.3125rem;
+        padding-bottom: 0.75rem;
+
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        align-content: start;
+        column-gap: 15px;
+        row-gap: 23px;
+
+        overflow-y: scroll;
+        max-height: 100vh;
+        height: 100vh;
+
+        &::-webkit-scrollbar {
+            width: 0;
+        }
+
+        @include small-tablet {
+            grid-template-columns: repeat(12, 1fr);
+            column-gap: 1.25rem;
+            row-gap: 1.25rem;
+
+            max-height: calc(100vh - (5rem));
+        }
+
+        @include big-desktop {
+            column-gap: 2.5rem;
+        }
+    }
+
+    &__top {
+        grid-column: 4 span;
+
+        display: flex;
+        justify-content: space-between;
+        row-gap: 23px;
+        flex-wrap: wrap;
+
+        @include small-tablet {
+            flex-wrap: nowrap;
+            grid-column: 12 span;
+            margin-bottom: 1.875rem;
+        }
+    }
+
+    &__filterWrapper {
+        position: relative;
+    }
+
+    &__filterOverlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1;
+
+        width: 100vw;
+        height: 100vh;
+    }
+
+    &__btnFilter {
+        display: flex;
+        column-gap: 0.1875em;
+
+        font-size: 1rem;
+        font-weight: 700;
+        color: var(--dark-color);
+        text-transform: uppercase;
+
+        & svg {
+            fill: none;
+            width: 0.625em;
+            height: 1em;
+        }
+
+        @include hover {
+            & span {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &__mobileFilters {
+        width: 100%;
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    &__btnFilterMob {
+        padding: 2px 4px;
+    }
+
+    &__workWithCards {
+        display: flex;
+        column-gap: 2.5rem;
+    }
+
+    &__workWithCardsText {
+        margin: 0;
+
+        font-size: 1rem;
+        font-weight: 700;
+        color: var(--dark-color);
+        text-transform: uppercase;
+    }
+
+    &__workWithCardsBlock {
+        display: flex;
+        column-gap: 2.5rem;
+        justify-content: space-between;
+
+        @include small-tablet {
+            justify-content: start;
+        }
+    }
+
+    &__btnAction {
+        padding: 0.375em 0.5em;
+    }
+}
+
+.cardsList {
+    grid-column: 4 span;
+
+    position: relative;
+
+    padding-bottom: 0.5rem;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: start;
+    align-content: start;
+
+    column-gap: 0.9375rem;
+    row-gap: 1.4375rem;
+
+    overflow-y: scroll;
+
+    max-height: 100vh;
+    height: 100vh;
+
+    &::-webkit-scrollbar {
+        width: 0;
+    }
+
+    @include big-mobile {
+        justify-content: start;
+    }
+
+    @include small-tablet {
+        grid-column: 12 span;
+
+        row-gap: 1.25rem;
+
+        max-height: calc(100vh - (8.4375rem));
+    }
+
+    @include tablet {
+        column-gap: 1.2909rem;
+    }
+
+    @include big-tablet {
+        column-gap: 1.4308rem;
+    }
+
+    @include for-desktop {
+        column-gap: 2.7714rem;
+    }
+
+    @include big-desktop {
+        column-gap: 2.45rem;
+    }
+}

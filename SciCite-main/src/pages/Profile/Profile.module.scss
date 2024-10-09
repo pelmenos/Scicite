@@ -1,0 +1,61 @@
+@import 'app/styles/mixins/breakpoint.scss';
+
+
+.main {
+    position: relative;
+
+    padding-top: 23px;
+    padding-bottom: 230px;
+    min-height: 90vh;
+
+    background: var(--light-gray-color);
+    box-shadow: 0px 0.25rem 0.25rem 0px rgba(0, 0, 0, 0.25);
+
+    @include small-tablet {
+        padding-top: 8.25rem;
+        padding-bottom: 13.625rem;
+    }
+
+    &__container {
+        display: grid;
+        grid-template-columns: 1fr;
+        column-gap: 5rem;
+
+        @include small-tablet {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    &__toogleBtnsMobile {
+        margin-bottom: 60px;
+        
+        display: flex;
+        column-gap: 10px;
+
+        @include small-tablet {
+            display: none;
+        }
+    }
+
+    &__toggleBtnMobile {
+        padding: 4px;
+    }
+
+    &__title {
+        margin: 0;
+        margin-bottom: 15px;
+
+        text-align: center;
+
+        font-size: 1.3333rem;
+        font-weight: 700;
+        color: var(--dark-color);
+        text-transform: uppercase;
+
+        @include small-tablet {
+            margin-bottom: 0.7083em;
+
+            font-size: 1.5rem;
+        }
+    }
+}

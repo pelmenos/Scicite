@@ -1,0 +1,104 @@
+@import 'app/styles/mixins/breakpoint.scss';
+
+.responsesEmpty {
+    &__container {
+        position: relative;
+        z-index: 1;
+
+        padding-top: 278px;
+        padding-bottom: 334px;
+
+        height: 100vh;
+
+        // @include small-tablet {
+        //     padding-top: 18.75rem;
+        //     padding-bottom: 14.875rem;
+        // }
+    }
+
+    &__title {
+        margin: 0;
+        margin-bottom: 20px;
+        text-align: center;
+
+        font-size: 1.3333rem;
+        font-weight: 700;
+        color: var(--dark-color);
+        text-transform: uppercase;
+
+        @include small-tablet {
+            font-size: 1.5rem;
+        }
+    }
+
+    &__btn {
+        position: relative;
+        display: block;
+
+        margin: 0 auto;
+        margin-bottom: 26px;
+
+        max-width: 150px;
+
+        border: 1px solid var(--main-color);
+        background: var(--light-color);
+        box-shadow: 0px 0px 0.25rem 0px rgba(0, 0, 0, 0.25);
+
+        padding: 45px 30px;
+
+        color: var(--dark-color);
+
+        & svg {
+            fill: none;
+
+            width: 86px;
+            height: 86px;
+        }
+
+        @include small-tablet {
+            margin-bottom: 3.25rem;
+
+            padding: 5rem 3.4375rem;
+
+
+            max-width: 16.25rem;
+
+
+            & svg {
+                width: 9.375rem;
+                height: 8.8125rem;
+            }
+        }
+
+        &::after {
+            content: '';
+
+            display: block;
+            width: calc(100% - 2px);
+            height: calc(100% - 2px);
+
+            border: 1px solid var(--main-color);
+
+            position: absolute;
+            top: 1px;
+            left: 1px;
+            z-index: -1;
+            transform: translate(12px, 12px);
+
+        }
+    }
+
+    &__text {
+        margin: 0;
+        text-align: center;
+
+        font-size: 1.3333rem;
+        font-weight: 700;
+        color: var(--dark-color);
+        text-transform: uppercase;
+
+        @include small-tablet {
+            font-size: 1.5rem;
+        }
+    }
+}

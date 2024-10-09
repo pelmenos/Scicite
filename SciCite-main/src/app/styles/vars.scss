@@ -1,0 +1,30 @@
+:root {
+    --font-family: "Montserrat", sans-serif;
+  
+    --content-width-bm: 656px;
+    --content-width-st: 900px;
+    --content-width-t: 1140px;
+    --content-width-bt: 1360px;
+    --content-width-xl: 1560px;
+    --content-width-xxl: 1760px;
+
+    --container-offset-m: 20px;
+    --container-offset: 10px;
+  
+    --container-width-bm: calc(var(--content-width-bm) + (var(--container-offset) * 2));
+    --container-width-st: calc(var(--content-width-st) + (var(--container-offset) * 2));
+    --container-width-t: calc(var(--content-width-t) + (var(--container-offset) * 2));
+    --container-width-bt: calc(var(--content-width-bt) + (var(--container-offset) * 2));
+    --container-width-xl: calc(var(--content-width-xl) + (var(--container-offset) * 2));
+    --container-width-xxl: calc(var(--content-width-xxl) + (var(--container-offset) * 2));
+  
+    --grid-offset: 1.25rem;
+  
+    // colors
+    --light-color: #fff;
+    --dark-color: #000;
+    --main-color: #2f7eB8;
+    --biscay-color: #1a4666;
+    --light-gray-color: #f3f3f3;
+    --error-color: #d93535;
+  }

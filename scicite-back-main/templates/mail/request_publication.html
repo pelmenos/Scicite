@@ -1,0 +1,95 @@
+{% load static %}<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+
+<head>
+    <title>Banner</title>
+    
+    
+</head>
+
+<body style="margin: 0;padding: 0;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;text-size-adjust: 100%;line-height: 100%;width: 100% !important;">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="margin: 0;padding: 0;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;" bgcolor="#ffffff">
+        <tr>
+            <td style="border-collapse: collapse;">
+                <table class="main table-850" border="0" cellpadding="0" cellspacing="0" width="900" align="center" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;">
+                    <tr>
+                        <td class="header-td" height="184" width="900" style="border-collapse: collapse;">
+                            <table class="main table-850" border="0" cellpadding="0" cellspacing="0" width="900" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;">
+                                <tr>
+                                    <td class="banner" style="border-collapse: collapse;">
+                                        <a href="https://scicite.com"><img src="https://scicite.com{% get_static_prefix %}mail/img/main.png" alt="banner" height="184" width="900" style="outline: none;text-decoration: none;border: none;-ms-interpolation-mode: bicubic;margin: 0;padding: 0;display: block;max-width: 100% !important;"></a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#ffffff" style="border-collapse: collapse;">
+                            <table border="0" cellpadding="0" cellspacing="0" width="836" align="center" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;">
+                                <tr>
+                                    <td height="35" style="border-collapse: collapse;"></td>
+                                </tr>
+                                <tr>
+                                    <td class="title" style="font-family: Arial, Helvetica, sans-serif, 'Inter';border-collapse: collapse;color: #000000;font-size: 37.5px;font-style: normal;font-weight: 900;line-height: 125%;" align="start">
+                                        Запрос на публикацию
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td height="17.5" style="border-collapse: collapse;"></td>
+                                </tr>
+                                <tr>
+                                    <td class="text" style="font-family: Arial, Helvetica, sans-serif, 'Inter';border-collapse: collapse;color: #000000;font-size: 17.5px;font-style: normal;font-weight: 500;line-height: 125%;">
+                                        Пользователь <b>{{offer.perfomer.login}}</b> оформил публикацию вашего исследования по карточке
+                                        <b>№{{offer.card.cart_number}} “{{offer.card.theme}}"</b>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text" style="font-family: Arial, Helvetica, sans-serif, 'Inter';border-collapse: collapse;color: #000000;font-size: 17.5px;font-style: normal;font-weight: 500;line-height: 125%;">
+                                        Переходите по <a href="http://scicite.com/mycards/" style="color: #000;font-size: 17.5px;font-style: normal;font-weight: 700;line-height: 125%;text-decoration-line: underline;">ссылке</a>, чтобы ознакомиться с материалами и подтвердить запрос на публикацию.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td height="25" style="border-collapse: collapse;"></td>
+                                </tr>
+                                <tr>
+                                    <td class="text" style="font-family: Arial, Helvetica, sans-serif, 'Inter';border-collapse: collapse;color: #000000;font-size: 17.5px;font-style: normal;font-weight: 500;line-height: 125%;">
+                                        Спасибо, что пользуетесь <a href="https://scicite.com">SciCite</a>!
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td height="35" style="border-collapse: collapse;"></td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border-collapse: collapse;">
+                            <table bgcolor="#4e4e4e" border="0" cellpadding="0" cellspacing="0" width="900" align="center" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;">
+                                <tr>
+                                    <td style="border-collapse: collapse;">
+                                        <table border="0" cellpadding="0" cellspacing="0" align="center" width="459" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;">
+                                            <tr>
+                                                <td height="50" style="border-collapse: collapse;"></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="footer-text" style="font-family: Arial, Helvetica, sans-serif, 'Inter';border-collapse: collapse;color: #ffffff;font-size: 16px;font-style: normal;font-weight: 700;line-height: 125%;" align="center">
+                                                    Служба технической поддержки пользователей SciCite. ©SciArticle,
+                                                    2023. Все права защищены.
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td height="50" style="border-collapse: collapse;"></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>

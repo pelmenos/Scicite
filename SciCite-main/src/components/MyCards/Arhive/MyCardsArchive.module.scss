@@ -1,0 +1,57 @@
+@import 'app/styles/mixins/breakpoint.scss';
+
+.myCardsArchive {
+    position: relative;
+    z-index: 1;
+
+    padding-top: 3.75rem;
+    padding-bottom: 0.75rem;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: start;
+    align-content: start;
+
+    column-gap: 0.9375rem;
+    row-gap: 1.4375rem;
+
+    overflow-y: scroll;
+    
+    max-height: 100vh;
+    height: 100vh;
+
+    &::-webkit-scrollbar {
+        width: 0;
+    }
+
+    @include big-mobile {
+        justify-content: start;
+        column-gap: 3.8333rem;
+    }
+
+    @include small-tablet {
+        column-gap: 4.8667rem;
+        row-gap: 1.25rem;
+        padding-right: 0.75rem;
+        padding-left: 0.75rem;
+
+        max-height: calc(100vh - (8.4375rem));
+    }
+
+    @include tablet {
+        column-gap: 1.2909rem;
+    }
+
+    @include big-tablet {
+        column-gap: 1.4308rem;
+    }
+
+    @include for-desktop {
+        column-gap: 2.7714rem;
+    }
+
+    @include big-desktop {
+        column-gap: 2.45rem;
+    }
+}

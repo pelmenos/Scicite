@@ -1,0 +1,523 @@
+@import "app/styles/mixins/breakpoint.scss";
+@import "app/styles/mixins/disable-mob-hover.scss";
+
+/* .substrate {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1010;
+
+    background-color: rgba($color: #000000, $alpha: 0.3);
+
+    width: 100%;
+    height: 100%;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+} */
+
+.modal {
+  cursor: default;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  max-width: 430px;
+  width: 100%;
+
+  padding: 30px 50px;
+  background-color: var(--main-color);
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
+
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+
+  @include small-tablet {
+    max-width: 40rem;
+    padding: 3.75rem 8.0625rem;
+    row-gap: 1.25rem;
+  }
+}
+
+.title {
+  margin: 0;
+
+  text-align: center;
+
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--light-color);
+  text-transform: uppercase;
+
+  & span {
+    text-decoration: underline;
+  }
+}
+
+.passwordWrapper {
+  position: relative;
+}
+
+.field {
+  padding: 4px 15px;
+  padding-right: 0;
+
+  @include small-tablet {
+    padding: 0.625em 1.625em;
+    padding-top: 0.625em !important;
+    padding-bottom: 0.625em !important;
+  }
+}
+
+.btnTogglePassVisible {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.8rem;
+  z-index: 1;
+  color: var(--dark-color);
+
+  & svg {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+}
+
+.btnSub {
+  margin: 0 auto;
+  padding: 4px;
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: default;
+  }
+
+  @include small-tablet {
+    padding: 0.625em 0.9375em;
+  }
+}
+
+.btnFotgot {
+  margin: 0 auto;
+
+  width: fit-content;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 400;
+  text-decoration-line: underline;
+  color: var(--light-color);
+  text-transform: uppercase;
+}
+
+.btnAuth {
+  margin: 0 auto;
+
+  width: fit-content;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration-line: underline;
+  color: var(--light-color);
+  text-transform: uppercase;
+
+  @include small-tablet {
+    font-size: 1.5rem;
+  }
+}
+
+.fieldWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.btnConfirm {
+  position: absolute;
+  top: 1px;
+  right: 0;
+  border-radius: 0px 9px 9px 0px;
+  background: #d9d9d9;
+  padding: 4px 15px;
+
+  height: calc(100% - 2px);
+
+  font-size: 1rem;
+  font-weight: 400;
+  text-decoration-line: underline;
+  color: var(--dark-color);
+  text-transform: uppercase;
+
+  @include small-tablet {
+    padding: 0.5625em 0.9375em;
+  }
+}
+
+.subForm {
+  padding-right: 2rem;
+  padding-left: 2rem;
+}
+
+/* .view {
+    animation: view 1s;
+}
+
+.hidden {
+    animation: hidd 1s;
+}
+
+@keyframes view {
+    0% {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    100% {
+        opacity: 1;
+        pointer-events: all;
+    }
+}
+
+@keyframes hidd {
+    0% {
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    100% {
+        opacity: 0;
+        pointer-events: none;
+    }
+} */
+
+.error {
+  height: 100%;
+  min-height: 5px;
+  margin: 0;
+  margin-top: 3px;
+  color: #ffb6b6;
+}
+
+.reactTelInput {
+  position: relative;
+}
+
+.flagDropdown {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  padding: 0;
+  background-color: transparent !important;
+  border-top: 1px solid #2f7eb8 !important;
+  border-bottom: 1px solid #2f7eb8 !important;
+  border-left: none !important;
+  border-right: none !important;
+  border-radius: 9px 0 0 9px !important;
+
+  & > div {
+    outline: none;
+    position: relative;
+    width: 38px;
+    height: 100%;
+    padding: 0 0 0 8px;
+    background-color: transparent !important;
+    border-radius: 9px 0 0 9px !important;
+
+    & > div {
+      position: absolute;
+      top: 50%;
+      margin-top: -5px;
+      background-position: center;
+    }
+  }
+}
+
+.dropdown {
+  width: 23.875rem !important;
+}
+
+.input {
+  width: 100% !important;
+
+  border-radius: 9px !important;
+  border-top: 2px solid #2f7eb8 !important;
+  border-bottom: 2px solid #2f7eb8 !important;
+  background: var(--light-color) !important;
+  height: auto !important;
+
+  font-size: 1rem !important;
+  line-height: normal !important;
+  font-weight: 400 !important;
+  color: var(--dark-color) !important;
+
+  &::placeholder {
+    font-size: inherit !important;
+    font-weight: inherit !important;
+    color: inherit !important;
+    text-transform: inherit !important;
+  }
+
+  &:active,
+  &:focus {
+    border-color: var(--biscay-color);
+  }
+
+  &:disabled {
+    border: 1px solid #d9d9d9;
+
+    &::placeholder {
+      color: #d9d9d9;
+    }
+  }
+}
+.reactTelInput {
+  position: relative;
+}
+
+.flagDropdown {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  padding: 0;
+  background-color: transparent !important;
+  border-top: 1px solid #2f7eb8 !important;
+  border-bottom: 1px solid #2f7eb8 !important;
+  border-left: none !important;
+  border-right: none !important;
+  border-radius: 9px 0 0 9px !important;
+
+  & > div {
+    outline: none;
+    position: relative;
+    width: 38px;
+    height: 100%;
+    padding: 0 0 0 8px;
+    background-color: transparent !important;
+    border-radius: 9px 0 0 9px !important;
+
+    & > div {
+      position: absolute;
+      top: 50%;
+      margin-top: -5px;
+      background-position: center;
+    }
+  }
+}
+
+.dropdown {
+  width: 23.875rem !important;
+}
+
+.input {
+  width: 100% !important;
+
+  border-radius: 9px !important;
+  border-top: 2px solid #2f7eb8 !important;
+  border-bottom: 2px solid #2f7eb8 !important;
+  background: var(--light-color) !important;
+  height: auto !important;
+
+  font-size: 1rem !important;
+  line-height: normal !important;
+  font-weight: 400 !important;
+  color: var(--dark-color) !important;
+
+  &::placeholder {
+    font-size: inherit !important;
+    font-weight: inherit !important;
+    color: inherit !important;
+    text-transform: inherit !important;
+  }
+
+  &:active,
+  &:focus {
+    border-color: var(--biscay-color);
+  }
+
+  &:disabled {
+    border: 1px solid #d9d9d9;
+
+    &::placeholder {
+      color: #d9d9d9;
+    }
+  }
+}
+.reactTelInput {
+  position: relative;
+}
+
+.flagDropdown {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  padding: 0;
+  background-color: transparent !important;
+  border-top: 1px solid #2f7eb8 !important;
+  border-bottom: 1px solid #2f7eb8 !important;
+  border-left: none !important;
+  border-right: none !important;
+  border-radius: 9px 0 0 9px !important;
+
+  & > div {
+    outline: none;
+    position: relative;
+    width: 38px;
+    height: 100%;
+    padding: 0 0 0 8px;
+    background-color: transparent !important;
+    border-radius: 9px 0 0 9px !important;
+
+    & > div {
+      position: absolute;
+      top: 50%;
+      margin-top: -5px;
+      background-position: center;
+    }
+  }
+}
+
+.dropdown {
+  width: 23.875rem !important;
+}
+
+.input {
+  width: 100% !important;
+
+  border-radius: 9px !important;
+  border-top: 2px solid #2f7eb8 !important;
+  border-bottom: 2px solid #2f7eb8 !important;
+  background: var(--light-color) !important;
+  height: auto !important;
+
+  font-size: 1rem !important;
+  line-height: normal !important;
+  font-weight: 400 !important;
+  color: var(--dark-color) !important;
+
+  &::placeholder {
+    font-size: inherit !important;
+    font-weight: inherit !important;
+    color: inherit !important;
+    text-transform: inherit !important;
+  }
+
+  &:active,
+  &:focus {
+    border-color: var(--biscay-color);
+  }
+
+  &:disabled {
+    border: 1px solid #d9d9d9;
+
+    &::placeholder {
+      color: #d9d9d9;
+    }
+  }
+}
+
+.input[aria-invalid="true"] {
+  border-color: var(--error-color) !important;
+}
+
+.positive {
+  border-color: #2eb200 !important;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.containerCheckbox {
+  display: flex;
+  align-items: center;
+  column-gap: 2.25rem;
+
+  & .checkbox {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  & .containerTip {
+    & .label {
+      text-transform: uppercase;
+      font-family: Montserrat;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      color: #fff;
+
+      & > a {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.regButtonWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 0.875rem;
+
+  & button {
+    margin: 0;
+  }
+}
+
+.infoWrapper {
+  position: relative;
+  cursor: pointer;
+  width: 1.5rem;
+  height: 1.5rem;
+  & svg {
+    width: inherit;
+    height: inherit;
+  }
+
+  @include hover {
+    .info {
+      display: flex;
+    }
+  }
+}
+
+.info {
+  display: none;
+  pointer-events: none;
+  -webkit-user-select: none;
+  user-select: none;
+
+  position: absolute;
+  bottom: 2.125rem;
+  left: 0;
+  z-index: 1;
+
+  width: 26.25rem;
+
+  background-color: var(--light-color);
+  border-radius: 0.5rem;
+  padding: 1.625rem 1.875rem;
+
+  flex-direction: column;
+  row-gap: 0.625rem;
+
+  & p {
+    margin: 0;
+
+    color: var(--dark-color);
+    font-size: 1rem;
+    font-weight: 400;
+
+    & b {
+      font-weight: 700;
+    }
+  }
+}

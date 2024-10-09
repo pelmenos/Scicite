@@ -1,0 +1,167 @@
+@import 'app/styles/mixins/disable-mob-hover.scss';
+
+.responsesCard {
+    cursor: default;
+
+    position: relative;
+
+    grid-column: 2 span;
+
+    box-shadow: 0px 0.25rem 0.25rem 0px rgba(0, 0, 0, 0.25);
+
+    &::after {
+        content: '';
+
+        display: block;
+        width: calc(100% - 2px);
+        height: calc(100% - 2px);
+
+        border: 1px solid var(--main-color);
+
+        position: absolute;
+        top: 1px;
+        left: 1px;
+        z-index: -2;
+
+        transition: transform 0.3s ease-in-out;
+    }
+
+    @include hover {
+        &::after {
+            transform: translate(0.75rem, 0.75rem);
+
+        }
+    }
+
+    &__top {
+        position: relative;
+
+        width: 100%;
+        height: auto;
+        aspect-ratio: 260/138;
+
+        padding-top: 0.875rem;
+        padding-right: 0.6875rem;
+        padding-bottom: 0.5625rem;
+        padding-left: 1.25rem;
+
+        & img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            z-index: -1;
+            transform: translate(-50%, -50%);
+
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__iconsBlock {
+        margin-bottom: 2.25rem;
+
+        display: flex;
+        justify-content: space-between;
+
+        & svg {
+            width: 1.25rem;
+            height: 1.25rem;
+        }
+    }
+
+    &__checkBox {
+        position: absolute;
+        top: 0.625rem;
+        right: 1.25rem;
+
+        width: 1.125rem;
+        height: 1.125rem;
+
+        border: 1px solid var(--dark-color);
+        border-radius: 50%;
+
+        background-color: transparent;
+
+        &:checked {
+            background-color: var(--main-color);
+        }
+    }
+
+    &__status {
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        padding: 0.625em 1.25em;
+
+        font-size: 1rem;
+        font-weight: 400;
+        text-transform: uppercase;
+    }
+
+    &__title {
+        margin: 0;
+
+
+        font-size: 1rem;
+        font-weight: 400;
+        color: var(--dark-color);
+        text-transform: uppercase;
+    }
+
+    &__bottom {
+        background-color: var(--light-color);
+        padding: 0 1.25rem;
+        padding-top: 0.9375rem;
+        padding-bottom: 1.25rem;
+    }
+
+    &__priceBlock {
+        margin-bottom: 1.25em;
+
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        row-gap: 10px;
+
+        font-size: 1rem;
+        font-weight: 400;
+        color: var(--dark-color);
+        text-transform: uppercase;
+    }
+
+    &__price {
+        width: 100%;
+
+        display: flex;
+        align-items: center;
+        column-gap: 0.625em;
+
+        & svg {
+            width: 1.25em;
+            height: 1.25em;
+        }
+    }
+
+    &__date {
+        display: flex;
+        align-items: center;
+        column-gap: 0.625em;
+
+        & svg {
+            width: 1.25em;
+            height: 1.25em;
+        }
+    }
+
+    &__btnsBlock {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__btnDetail {
+        max-width: 6.25em;
+        width: 100%;
+        padding: 0.4375em 0;
+    }
+}

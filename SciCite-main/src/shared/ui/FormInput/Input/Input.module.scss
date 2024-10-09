@@ -1,0 +1,40 @@
+.input {
+    width: 100%;
+
+    border-radius: 9px;
+    border: 2px solid #2F7EB8;
+    background: var(--light-color);
+
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--dark-color);
+
+    &::placeholder {
+        font-size: inherit;
+        font-weight: inherit;
+        color: inherit;
+        text-transform: inherit;
+    }
+
+    &:active,
+    &:focus {
+        border-color: var(--biscay-color);
+    }
+
+    &:disabled {
+
+        border: 1px solid #d9d9d9;
+
+        &::placeholder {
+            color: #d9d9d9;
+        }
+    }
+}
+
+.input[aria-invalid=true] {
+    border-color: var(--error-color);
+}
+
+.positive {
+    border-color: #2eb200;
+}

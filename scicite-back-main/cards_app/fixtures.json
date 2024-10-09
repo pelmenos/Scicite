@@ -1,0 +1,26 @@
+[
+{
+    "model": "cards_app.tariff",
+    "pk": "e5ace8c4-b015-4c55-9065-130eec5137c1",
+    "fields": {
+        "scicoins": 300,
+        "period": 3
+    }
+},
+{
+    "model": "cards_app.tariff",
+    "pk": "6e234b28-1b41-4933-94be-1c1c2a7c0e63",
+    "fields": {
+        "scicoins": 0,
+        "period": 0
+    }
+},
+{
+    "model": "cards_app.tariff",
+    "pk": "2f6b7a18-4a2f-4dbb-970e-9ed47e659150",
+    "fields": {
+        "scicoins": 500,
+        "period": 6
+    }
+}
+]

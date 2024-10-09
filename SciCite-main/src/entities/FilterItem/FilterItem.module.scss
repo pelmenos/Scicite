@@ -1,0 +1,69 @@
+@import 'app/styles/mixins/disable-mob-hover.scss';
+
+.itemWrapper {
+    &:not(:last-child) {
+        margin-bottom: 1.1429em;
+    }
+
+    cursor: pointer;
+    
+    display: flex;
+    align-items: center;
+    column-gap: 0.9286em;
+
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: var(--dark-color);
+    text-transform: uppercase;
+}
+
+.item {
+    margin: 0;
+
+        width: 1.25rem;
+        height: 1.25rem;
+
+        border: 2px solid var(--main-color);
+        border-radius: 0.3125rem;
+
+        @include hover {
+            border-color: #569ED4;
+        }
+
+        &:active {
+            border-color: #1A4666;
+        }
+
+        &:checked {
+            background-color: var(--main-color);
+            background-image: url(../../assets/img/svg/tick.svg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 0.875rem 0.75rem;
+
+            @include hover {
+                background-color: #569ED4;
+            }
+
+            &:active {
+                background-color: #1A4666;
+            }
+        }
+
+        &:disabled {
+            border-color: #D9D9D9;
+
+            @include hover {
+                background-color: #D9D9D9;
+            }
+
+            &:active {
+                background-color: #D9D9D9;
+            }
+        }
+}
+
+.active {
+    width: fit-content;
+    border-bottom: 2px solid var(--main-color);
+}

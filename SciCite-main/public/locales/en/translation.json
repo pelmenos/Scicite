@@ -1,0 +1,269 @@
+{
+  "lang": "RU",
+
+  "signIn": "Sign in",
+  "main": "Main",
+  "search": "Search",
+  "my_cards": "My cards",
+  "responses": "Responses",
+  "how_use": "How use",
+
+  "main_title": "A service for finding colaboration in the scientific community",
+  "main_subtitle": "Develop and promote science",
+
+  "login": "Login",
+  "password": "Password",
+  "email": "Email",
+  "phone": "Phone number",
+  "full_name": "Full name",
+  "password_confirm": "Password confirm",
+  
+  "yes": "Yes",
+  "no": "cancel",
+  "cancel": "Cancel",
+
+  "required": "{{name}} required",
+  "not_required": "Not necessarily",
+  "min_length": "Not enough characters",
+  "min_length_few": "{{name}} must be at least {{count}} characters",
+  "min_length_many": "{{name}} must be at least {{count}} characters",
+  "max_length": "Too many characters",
+  "max_length_few": "{{name}} should not exceed {{count}} characters",
+  "max_length_many": "{{name}} should not exceed {{count}} characters",
+  "incorrect": "Incorrect {{name}}",
+  "password_message": "The password should contain only numbers, uppercase and lowercase letters",
+  "confirm_pass_error": "Passwords don't match",
+  "read": "I have read",
+  "policy": "the privacy policy",
+  "user_policy": " the user agreement",
+  "signUp_text": {
+    "part1": "SciCite is a platform that allows you to increase the coverage of scientists' works by indexing works on the Internet and using a marketing approach to the promotion of scientific papers.",
+    "part2": "The platform is an aggregator of scientific papers with stages of processing the citation process (tracker) and a gamified reward system in the form of an in-platform currency. On the platform, the user ",
+    "strong": "can't 'buy a quote'."
+  },
+  "reg_confirm": {
+    "part1": "A link was sent to ",
+    "part2": "to confirm the registration"
+  },
+
+  "signUp": "Sign Up",
+  "forgot_password": "Forgot your password?",
+  "exit": "You're sure you want to log out of your account",
+
+  "reset": "Reset",
+  "password_reset": "Password reset",
+  "reset_confirm": {
+    "part1": "A link to reset your password was sent to",
+    "part2": ""
+  },
+
+  "welcome_bonus": "Welcome bonus",
+  "achievement": "Achievement",
+  "registration": "Registration",
+  "first_card": "First card",
+  "first_offer": "response",
+  "first_quote": "Citation",
+  "first_publication": "First publication",
+  "get": "Get",
+
+  "new_password": "New password",
+  "new_password_confirm": "Confirm new password",
+  "change_password": "Change password",
+
+  "footer_policy": "Privacy policy",
+  "footer_user_policy": "User agreement",
+  "support": "Support",
+  "newsletter": "Newsletter",
+  "enter_email": "Enter email",
+  "subscription": "Subscribe",
+
+  "block": "Block",
+  "citation": "Citation",
+  "creating_card": "Creating card",
+  "barter": "Barter",
+
+  "profile": "Profile",
+  "progress": "Progress",
+  "profile_data": "Profile data",
+  "statistics": "Statistics",
+  "my_progress": "My progress",
+  "edit": "Edit",
+  "statistic_data": {
+    "created_cards": "Cards created",
+    "citations_received": "Citations received",
+    "citations_formated": "Citations issued",
+    "successful_citations": "Successful citations",
+    "scicoins_spent": "Scicoins spent",
+    "scicoins_earned": "Scicoins earned",
+    "exchanges_completed": "barter"
+  },
+  "achievements_earned": "Achievements received",
+  "of": "from",
+  "accept": "accept",
+  "achievement_list": "Achievements",
+  "close": "close",
+  "changing_password": "change Password",
+  "old_password": "Old Password",
+  "publication": {
+    "zero": "publications",
+    "one": "publication",
+    "few": "publications",
+    "many": "publications"
+  },
+  "responses_in_month": "responses per month",
+  "beginner": "junior",
+  "advanced": "advanced",
+  "experienced": "experienced",
+  "professional": "professional",
+  "level": "level {{count}}: {{name}}",
+  "filters": "Filters",
+  "areas": "directions",
+  "indexing": "index",
+  "more": "More details",
+  "card": "Card",
+  "field_of_science": "fields of study",
+  "citation_link_copied": "Quote link copied",
+  "annotation_text": "abstract",
+  "respond": "cite",
+  "card_added": "Card added to responses",
+  "go": "Go",
+  "barter_title": "select a card to exchange citations or create a new one",
+  "barter_subtitle": "select a card to exchange",
+  "create_card": "create a card",
+  "confirm": "Confirm",
+  "doi_dialog": "If the entered DOI is in the crossref database, the card creation fields will be filled in automatically. ",
+  "file_size": "Maximum file size 20 MB",
+  "autocomplete_succeeded": "Autofill completed successfully.",
+  "autocomplete_faild": "Autocomplete failed for the specified doi.",
+  "upload_file": "upload the article",
+  "area_message": "Select at least one section for your research",
+  "area": {
+    "one": "field of study",
+    "many": "section"
+  },
+  "article_title": "article title",
+  "citation_link": {
+    "1": "link to citation",
+    "2": "link to citation"
+  },
+  "present": "present",
+  "no_exchange": "absent",
+  "possibility_exchange": "Barter option",
+  "keywords": "keywords",
+  "visibility_period": "card visibility period",
+  "edit_card": "edit card",
+  "required_card_field": "Fill in {{name}}",
+  "authors": {
+    "1": "authors",
+    "2": "authors"
+  },
+  "volume": "volume",
+  "page": "pages",
+  "year": "year",
+  "journal": "journal",
+  "create": "create",
+  "exchange_card": "barter",
+  "month": {
+    "1": "month",
+    "2": "months",
+    "3": "months"
+  },
+  "describe_problem": "Describe your problem",
+  "expect_response": "expect a response to your email soon",
+  "theme": {
+    "1": "subject",
+    "2": "topic"
+  },
+  "message": "message",
+  "orders": "orders",
+  "archive": "archive",
+
+  "cards_bcg": {
+    "humanities": "гуманитарные",
+    "mathematics/IT": "математика/It",
+    "sociology": "социология",
+    "art": "искусство",
+    "biology/genetics": "биология/генетика",
+    "physics": "физика",
+    "engineering/materials": "инженерия/материалы",
+    "psychology": "психология",
+    "chemistry": "химия",
+    "management/economics": "менеджмент/экономика",
+    "medicine": "медицина"
+  },
+
+  "prolong": "prolong",
+
+  "offers_status": {
+    "accepted": "accepted",
+    "citation": "citation",
+    "response": "response",
+    "expectation": "expectation",
+    "publication": "publication",
+    "rejection": "reject"
+  },
+
+  "choose_cards_for_multi": "choose cards for {{name}}",
+  "multi_citation": {
+    "1": "multi-citation",
+    "2": "multi-citation"
+  },
+  "multi_publication": {
+    "1": "multi-publication",
+    "2": "multi-publication"
+  },
+
+  "other": "other",
+  "web_of_science": "web of science",
+  "scopus": "scopus",
+  "vak": "wack",
+  "rinc": "rinz",
+  "delete": "delete",
+  "restore": "restore",
+  "delete_card": "the card will be deleted from the archive",
+  "move_archive": "the card will be moved to the archive",
+  "coockie_text": "We care about your data and will only use cookies to improve your experience.",
+  "example_modal": {
+    "1": "The confirmation pdf file must include:",
+    "2": "page with article title and authors",
+    "3": "Citation links page",
+    "4": "References page"
+  },
+  "insuff_modal": "not enough scicoins",
+  "replenish": "replenish",
+  "response_status": "response status",
+  "up_file": "Upload file",
+  "publication_up_file": "Upload a PDF file of the preprint of your publication, which clearly shows the presence of the cited article in the list of references and a link to the citation in the text",
+  "choose_file": "SELECT PDF FILE",
+  "drag": "OR Drag the pdf HERE",
+  "drop": "release the file to download",
+  "file": "file",
+  "added": "successfully added!",
+  "upload": "upload",
+  "ask": "Ask a question",
+  "describe_reason": "describe the reason why you cannot publish your article with the required citation",
+  "describe_situation": "describe the situation, our support will contact the customer shortly and make its decision",
+  "pls_wait": "wait for a response by email",
+  "attention": "note",
+  "refuse_confirm_modal": {
+    "1": "You will not receive SciCoin for publications, and SciCoin received for citing will be debited from your account",
+    "2": "In case of unfounded reasons for refusal to publish, the platform may impose additional sanctions",
+    "3": "Refusal to publish has a negative impact on your account performance.",
+    "4": "confirm your refusal to publish"
+  },
+  "replenishment": "scicoins balance replenishment",
+  "count": "quantity",
+  "example": "example",
+  "choose_date": "select",
+  "not_exposed": "not exhibited",
+  "before": "before",
+  "view": "look",
+  "contact": "contact",
+  "decline": "reject",
+  "waiting_deal": "The deal has been moved to the pending section",
+
+  "submit": "submit",
+
+  "burger_page": "page",
+  "replies": "replies"
+}

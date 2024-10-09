@@ -1,0 +1,262 @@
+@import 'app/styles/mixins/breakpoint.scss';
+
+.substrate {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1010;
+
+    background-color: rgba($color: #000000, $alpha: 0.3);
+
+    width: 100%;
+    height: 100%;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+}
+
+.modalSupport {
+    cursor: default;
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+
+    padding-bottom: 10px;
+    background-color: var(--light-color);
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
+
+    @include small-tablet {
+        top: 50%;
+        left: 50%;
+        bottom: auto;
+        transform: translate(-50%, -50%);
+
+        max-width: 40.625rem;
+        padding-bottom: 1.875rem;
+    }
+
+    &__top {
+        background-color: var(--main-color);
+
+        padding: 0 20px;
+        padding-top: 23px;
+        padding-bottom: 10px;
+
+        @include small-tablet {
+            padding: 1.25rem 2.5rem;
+            padding-bottom: 0;
+        }
+    }
+
+    &__subTitle {
+        margin: 0;
+        margin-bottom: 10px;
+
+        font-size: 1rem;
+        font-weight: 400;
+        color: var(--light-color);
+        text-transform: uppercase;
+
+        @include small-tablet {
+            margin-bottom: 4.6875em;
+        }
+    }
+
+    &__title {
+        margin: 0;
+
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        font-size: 1.3333rem;
+        font-weight: 700;
+        color: #FFF;
+        text-transform: uppercase;
+
+        @include small-tablet {
+            font-size: 1.5rem;
+        }
+    }
+
+    &__middle {
+        padding: 10px 20px;
+
+        @include small-tablet {
+            padding: 0 2.5rem;
+            padding-top: 1.5rem;
+            padding-bottom: 4.375rem;
+        }
+    }
+
+    &__label {
+        display: block;
+        margin-bottom: 0.8333em;
+
+        font-size: 1rem;
+        font-weight: 400;
+        color: var(--dark-color);
+        text-transform: uppercase;
+
+        @include small-tablet {
+            margin-bottom: 2.5em;
+        }
+    }
+
+    &__textField {
+        resize: none;
+
+        margin-top: 1.375em;
+
+        width: 100%;
+        height: 22.375em;
+        border-radius: 0.75rem;
+        border: 1px solid var(--main-color);
+
+        padding: 0.375em 0.875em;
+        font-size: 1rem;
+        font-weight: 400;
+        color: var(--dark-color);
+        text-transform: uppercase;
+    }
+
+    &__bottom {
+        display: flex;
+        justify-content: center;
+        column-gap: 62px;
+
+        @include small-tablet {
+            column-gap: 3.625rem;
+        }
+    }
+
+    &__btn {
+        max-width: 87px;
+        width: 100%;
+
+        padding: 4px;
+
+        @include small-tablet {
+            max-width: 11.875em;
+
+            padding: 0.625em 0;
+        }
+    }
+}
+
+.fieldError {
+    border-color: var(--error-color);
+}
+
+.errorText {
+    padding-left: 0.5em;
+    font-size: 0.75rem;
+    font-weight: 500;
+    line-height: 1.4em;
+    letter-spacing: -0.01em;
+    color: var(--error-color);
+}
+
+.view {
+    animation: viewMob 1s;
+
+    @include small-tablet {
+        animation: view 1s;
+    }
+}
+
+.hidden {
+    animation: hiddMob 1s;
+
+    @include small-tablet {
+        animation: hidd 1s;
+    }
+}
+
+@keyframes view {
+    0% {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    100% {
+        opacity: 1;
+        pointer-events: all;
+    }
+}
+
+@keyframes hidd {
+    0% {
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    100% {
+        opacity: 0;
+        pointer-events: none;
+    }
+}
+
+@keyframes viewMob {
+    0% {
+        background-color: rgba($color: #000000, $alpha: 0);
+    }
+
+    100% {
+        background-color: rgba($color: #000000, $alpha: 0.3);
+    }
+}
+
+@keyframes hiddMob {
+    0% {
+        background-color: rgba($color: #000000, $alpha: 0.3);
+    }
+
+    100% {
+        background-color: rgba($color: #000000, $alpha: 0);
+    }
+}
+
+.viewModal {
+    animation: viewModal 1s;
+
+    @include small-tablet {
+        animation: none;
+    }
+}
+
+.hiddenModal {
+    animation: hiddModal 1s;
+
+    @include small-tablet {
+        animation: none;
+    }
+}
+
+@keyframes viewModal {
+    0% {
+        transform: translate(0, 100%);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes hiddModal {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(0, 100%);
+    }
+}

@@ -1,0 +1,32 @@
+.section {
+    padding-top: 4.3125rem;
+}
+
+.subToggleBlock {
+    margin-bottom: 3.125rem;
+
+    display: flex;
+    justify-content: center;
+    column-gap: 2.25rem;
+}
+
+.subToggleBtn {
+    max-width: 11.125em;
+    width: 100%;
+
+    padding: 0.375em 1eem;
+    border-radius: 0.5625em;
+    background: var(--main-color);
+
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--light-color);
+    text-transform: uppercase;
+}
+
+.activeBtn {
+    border: 3px solid var(--main-color);
+    background: var(--light-color);
+
+    color: var(--dark-color);
+}

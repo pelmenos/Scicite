@@ -1,0 +1,119 @@
+.substrate {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1010;
+
+    background-color: rgba($color: #000000, $alpha: 0.3);
+
+    width: 100%;
+    height: 100%;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+}
+
+.modalCreateTrans {
+    user-select: none;
+    cursor: default;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1010;
+    transform: translate(-50%, -50%);
+
+    width: 40.875rem;
+    background-color: var(--light-color);
+    padding: 0.9375rem 5.9375rem;
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.9375rem;
+}
+
+.title {
+    margin: 0;
+
+    text-align: center;
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: var(--dark-color);
+    text-transform: uppercase;
+}
+
+.fieldsBlock {
+    display: flex;
+    justify-content: space-between;
+}
+
+.field {
+    max-width: 13.75em;
+    border-radius: 9px;
+    border: 2px solid var(--main-color);
+    background: var(--light-color);
+
+    padding: 0.375em 0;
+
+    text-align: center;
+
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--dark-color);
+    text-transform: uppercase;
+
+    &::placeholder {
+        font-size: inherit;
+        font-weight: inherit;
+        color: inherit;
+        text-transform: inherit;
+    }
+}
+
+.btnsBlock {
+    display: flex;
+    justify-content: center;
+    column-gap: 3.625rem;
+}
+
+.btn {
+    padding: 0.25em;
+}
+
+.view {
+    animation: viewModal 1s;
+}
+
+.hidden {
+    animation: hiddModal 1s;
+}
+
+@keyframes viewModal {
+    0% {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    100% {
+        opacity: 1;
+        pointer-events: all;
+    }
+}
+
+@keyframes hiddModal {
+    0% {
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    100% {
+        opacity: 0;
+        pointer-events: none;
+    }
+}

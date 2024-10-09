@@ -1,0 +1,208 @@
+@import 'app/styles/mixins/disable-mob-hover.scss';
+@import 'app/styles/mixins/breakpoint.scss';
+
+.modalBarterItem {
+    cursor: default;
+
+    position: relative;
+
+    max-width: 188px;
+    width: 100%;
+    max-height: 165px;
+    height: auto;
+    aspect-ratio: 188/165;
+
+    background-color: var(--light-color);
+
+    box-shadow: 0px 0.25rem 0.25rem 0px rgba(0, 0, 0, 0.25);
+
+    @include small-tablet {
+        max-width: 16.25rem;
+        max-height: 17.25rem;
+        aspect-ratio: 260/276;
+    }
+
+    &::after {
+        content: '';
+
+        display: block;
+        width: calc(100% - 2px);
+        height: calc(100% - 2px);
+
+        border: 1px solid var(--main-color);
+
+        position: absolute;
+        top: 1px;
+        left: 1px;
+        z-index: -2;
+
+        transition: transform 0.3s ease-in-out;
+    }
+
+    @include hover {
+        &::after {
+            transform: translate(0.75rem, 0.75rem);
+        }
+    }
+
+    &__top {
+        position: relative;
+        z-index: 1;
+
+        width: 100%;
+        height: auto;
+        aspect-ratio: 188/102;
+
+        padding-top: 0.9375rem;
+        padding-right: 1.0625rem;
+        padding-bottom: 0.5625rem;
+        padding-left: 1.25rem;
+
+        @include small-tablet {
+            aspect-ratio: 260/138;
+
+            padding: 5px 18px;
+        }
+
+        & img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            z-index: -1;
+            transform: translate(-50%, -50%);
+
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__iconsBlock {
+        margin-bottom: 0.6875rem;
+
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        & svg {
+            width: 15px;
+            height: 15px;
+        }
+
+        @include small-tablet {
+            margin-bottom: 0.6875rem;
+
+            & svg {
+                width: 1.25rem;
+                height: 1.25rem;
+            }
+        }
+    }
+
+    &__checkBox {
+        width: 15px;
+        height: 15px;
+
+        border: 1px solid var(--dark-color);
+        border-radius: 50%;
+
+        background-color: transparent;
+
+        &:checked {
+            background-color: var(--main-color);
+        }
+
+        @include small-tablet {
+            width: 1.125rem;
+            height: 1.125rem;
+        }
+    }
+
+    &__categoryList {
+        display: flex;
+        column-gap: 7px;
+
+        @include small-tablet {
+            column-gap: 0.375rem;
+        }
+    }
+
+    &__citationCounter {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: 7px;
+
+        font-size: 1rem;
+        font-weight: 400;
+        color: var(--dark-color);
+        text-transform: uppercase;
+
+        @include small-tablet {
+            column-gap: 0.625em;
+        }
+    }
+
+    &__title {
+        margin: 0;
+
+        font-size: 1rem;
+        font-weight: 400;
+        color: var(--dark-color);
+        text-transform: uppercase;
+
+        display: -webkit-box;
+        max-width: 100%;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    &__bottom {
+        padding: 0 18px;
+        padding-top: 5px;
+        padding-bottom: 43px;
+
+        @include small-tablet {
+            padding: 0 1.25rem;
+            padding-top: 0.9375rem;
+            padding-bottom: 4.5625rem;
+        }
+    }
+
+    &__priceBlock {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        row-gap: 10px;
+
+        font-size: 1rem;
+        font-weight: 400;
+        color: var(--dark-color);
+        text-transform: uppercase;
+    }
+
+    &__price {
+
+        display: flex;
+        align-items: center;
+        column-gap: 7px;
+
+        & svg {
+            width: 15px;
+            height: 15px;
+        }
+
+        @include small-tablet {
+            width: 100%;
+
+            column-gap: 0.625em;
+
+            & svg {
+                width: 1.25em;
+                height: 1.25em;
+            }
+        }
+    }
+}

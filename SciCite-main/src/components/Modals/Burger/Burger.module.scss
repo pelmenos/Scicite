@@ -1,0 +1,151 @@
+@import 'app/styles/mixins/breakpoint.scss';
+
+.substrate {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1001;
+
+    width: 100%;
+    height: 100%;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+}
+
+.burger {
+    cursor: default;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 324px;
+    height: 100%;
+    background-color: var(--light-color);
+    padding-top: 6.4vh;
+
+    display: flex;
+    flex-direction: column;
+
+    &__nav {
+        margin-bottom: 8vh;
+
+        padding-left: 20px;
+    }
+
+    &__navList {
+        flex-direction: column;
+        row-gap: 4.7vh;
+
+        &::before {
+            content: attr(title);
+
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--dark-color);
+            text-transform: uppercase;
+        }
+    }
+
+    &__link {
+        display: block;
+        width: fit-content;
+        font-weight: 400;
+        color: var(--dark-color);
+    }
+
+    &__langList {
+        margin-bottom: 9.3vh;
+
+        padding-left: 20px;
+
+        &::before {
+            content: 'ЯЗЫК/LANGUAGE';
+
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--dark-color);
+            text-transform: uppercase;
+        }
+
+        display: flex;
+        flex-direction: column;
+        row-gap: 4.7vh;
+    }
+
+    &__langLink {
+        display: block;
+        width: fit-content;
+
+        font-size: 1rem;
+        font-weight: 400;
+        color: var(--dark-color);
+        text-transform: uppercase;
+    }
+
+    &__btnHelp {
+        margin-bottom: 9.3vh;
+
+        padding-left: 20px;
+
+        display: block;
+        width: fit-content;
+
+        font-size: 1rem;
+        font-weight: 400;
+        color: var(--dark-color);
+        text-transform: uppercase;
+    }
+
+    &__bottom {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 6vh;
+        background-color: var(--main-color);
+    }
+}
+
+.currentLink {
+    color: var(--main-color);
+}
+
+.view {
+    animation: viewModal 1s;
+}
+
+.hidden {
+    animation: hiddModal 1s;
+}
+
+@keyframes viewModal {
+    0% {
+        transform: translate(-324px, 0);
+        pointer-events: none;
+    }
+
+    100% {
+        transform: translate(0, 0);
+        pointer-events: all;
+    }
+}
+
+@keyframes hiddModal {
+    0% {
+        transform: translate(0, 0);
+        pointer-events: all;
+    }
+
+    100% {
+        transform: translate(-324px, 0);
+        pointer-events: none;
+    }
+}

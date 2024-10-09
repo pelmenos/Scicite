@@ -1,0 +1,14 @@
+@import 'app/styles/mixins/breakpoint.scss';
+
+.myCardsOrder {
+    max-height: 100vh;
+    height: 100vh;
+
+    @include small-tablet {
+
+        display: flex;
+        align-items: start;
+        justify-content: space-between;
+        max-height: calc(100vh - (8.4375rem));
+    }
+}

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="robots" content="index,follow" />
+    <meta name="keywords" content="цитирование, продвижение исследований, индекс Хирша, наукометрические показатели, охват публикации, scicite, сайсайт, сай цитирование, scicitation, sci цитирование, исследование, совместное исследование, научная публикация, научные публикации" />
+    <meta name="description" content="SciCite - платформа для поиска единомышленников и обмена научными знаниями">
+    <title>SciCite: Продвижение исследований</title>
+  <script defer src="/static/js/bundle.js"></script></head>
+  <body class="page__body">
+    <div id="root" class="site-container"></div>
+  </body>
+</html>

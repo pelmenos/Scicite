@@ -1,0 +1,97 @@
+.substrate {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1010;
+
+    background-color: rgba($color: #000000, $alpha: 0.3);
+
+    width: 100%;
+    height: 100%;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+}
+
+.modalDeleteCard {
+    user-select: none;
+    cursor: default;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1010;
+    transform: translate(-50%, -50%);
+
+    width: 27.3125rem;
+    background-color: var(--light-color);
+    padding: 1.5625rem 2.5rem;
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.9375rem;
+}
+
+.padd {
+    padding-right: 3.0625;
+    padding-left: 3.0625;
+}
+
+.title {
+    margin: 0;
+
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--dark-color);
+    text-transform: uppercase;
+}
+
+.btnsBlock {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn {
+    max-width: 8.5625em;
+    width: 100%;
+    padding: 0.25em;
+}
+
+.view {
+    animation: viewModal 1s;
+}
+
+.hidden {
+    animation: hiddModal 1s;
+}
+
+@keyframes viewModal {
+    0% {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    100% {
+        opacity: 1;
+        pointer-events: all;
+    }
+}
+
+@keyframes hiddModal {
+    0% {
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    100% {
+        opacity: 0;
+        pointer-events: none;
+    }
+}

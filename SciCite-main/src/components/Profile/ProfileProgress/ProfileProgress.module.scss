@@ -1,0 +1,112 @@
+.profileProgress {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__title {
+        margin-bottom: 2.1667em;
+    }
+
+    &__progressBarBlock {
+        margin-bottom: 2.5rem;
+
+        max-width: 23.5rem;
+        width: 100%;
+    }
+
+    &__progressBarTop {
+        margin-bottom: 0.875rem;
+
+        display: flex;
+        justify-content: space-between;
+
+        & svg {
+            width: 1.6875rem;
+            height: 1.875rem;
+        }
+    }
+
+    &__progressBar {
+        overflow: hidden;
+        position: relative;
+
+        margin-bottom: 0.5rem;
+
+        height: 1.25rem;
+        border-radius: 0.4375rem;
+        border: 1px solid var(--dark-color);
+    }
+
+    &__progressBarFill {
+        position: absolute;
+        top: -1px;
+        left: -1px;
+
+        border-radius: 0.4375rem 0px 0px 0.4375rem;
+        background: var(--main, #2F7EB8);
+
+        height: inherit;
+
+        transition: width 0.3s ease-in-out;
+    }
+
+    &__progressBarBottom {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        font-size: 1rem;
+        font-weight: 400;
+        color: var(--dark-color);
+        text-transform: uppercase;
+    }
+
+    &__progressList {
+        max-width: 27.5rem;
+        width: 100%;
+    }
+
+    &__progressItem {
+        &:not(:last-child) {
+            margin-bottom: 3.75rem;
+        }
+    }
+
+    &__progressTitle {
+        position: relative;
+
+        margin: 0;
+        margin-bottom: 0.5417em;
+
+        padding-left: 2.0417em;
+
+        text-align: center;
+
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--dark-color);
+        text-transform: uppercase;
+
+        & svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 1.125em;
+            height: 1.25em;
+        }
+    }
+
+    &__progressText {
+        display: block;
+        width: 100%;
+
+        padding-left: 2.8125em;
+
+        text-align: center;
+
+        font-size: 1rem;
+        font-weight: 400;
+        color: var(--dark-color);
+        text-transform: uppercase;
+    }
+}

@@ -1,0 +1,400 @@
+@import 'app/styles/mixins/breakpoint.scss';
+
+.substrate {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1010;
+
+    background-color: rgba($color: #000000, $alpha: 0.3);
+
+    width: 100%;
+    height: 100%;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+}
+
+.modalUpCitation {
+    cursor: default;
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    padding-bottom: 23px;
+    width: 100%;
+
+    padding-bottom: 1.875rem;
+    background-color: var(--light-color);
+    box-shadow: 0px 0px 0.25rem 0px rgba(0, 0, 0, 0.25);
+
+    @include small-tablet {
+        top: 50%;
+        bottom: auto;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        padding-bottom: 1.875rem;
+        max-width: 40.625rem;
+        box-shadow: 0px 0px 0.25rem 0px rgba(0, 0, 0, 0.25);
+    }
+}
+
+.top {
+    background-color: var(--main-color);
+
+    padding: 10px 20px;
+    padding-top: 23px;
+
+    @include small-tablet {
+        padding: 1.25rem 2.5rem;
+        padding-bottom: 0;
+    }
+}
+
+.number {
+    margin: 0;
+    margin-bottom: 10px;
+
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--light-color);
+    text-transform: uppercase;
+
+    @include small-tablet {
+        margin-bottom: 0.9375em;
+    }
+}
+
+.title {
+    margin: 0;
+
+    display: flex;
+    align-items: end;
+
+    min-height: 20px;
+
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--light-color);
+    text-transform: uppercase;
+
+    display: -webkit-box;
+    max-width: 100%;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    @include small-tablet {
+        display: block;
+        min-height: 3.75em;
+    }
+}
+
+.middle {
+    padding: 10px 20px;
+
+    @include small-tablet {
+        padding: 0 2.5rem;
+        padding-top: 1.5rem;
+    }
+}
+
+.descr {
+    margin: 0;
+    margin-bottom: 10px;
+
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--dark-color);
+    text-transform: uppercase;
+
+    @include small-tablet {
+        margin-bottom: 1.875em;
+        padding-right: 0.875em;
+    }
+}
+
+.btnExample {
+    margin-bottom: 10px;
+    padding: 4px;
+
+    @include small-tablet {
+        margin-bottom: 1.25em;
+        padding: 0.625em 1.3125em;
+    }
+}
+
+.citationModalForm {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+
+    @include small-tablet {
+        row-gap: 0.9375rem;
+    }
+}
+
+.field {
+    border-radius: 8px;
+    border: 2px solid var(--main, #2F7EB8);
+    background: var(--light-gray-color);
+
+    padding: 4px;
+
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--dark-color);
+    text-transform: uppercase;
+
+    &::placeholder {
+        font-size: inherit;
+        font-weight: inherit;
+        color: inherit;
+        text-transform: inherit;
+    }
+
+    &::-webkit-scrollbar {
+        width: 0;
+    }
+
+    & span {
+        &::-webkit-scrollbar {
+            width: 0;
+        }
+    }
+
+    @include small-tablet {
+        border-radius: 0.5em;
+        padding: 0.375em 1.5em;
+    }
+}
+
+.naturalSize {
+    text-transform: none;
+}
+
+.disabledField {
+    border-radius: 8px;
+    border: 2px solid var(--dark-color) !important;
+    background: var(--light-gray-color);
+    max-height: 2.1875em;
+
+    padding: 0 4px;
+
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--dark-color) !important;
+
+    &::placeholder {
+        font-size: inherit;
+        font-weight: inherit;
+        color: var(--dark-color) !important;
+        text-transform: inherit;
+    }
+
+    @include small-tablet {
+        border-radius: 0.5em;
+        padding: 0 1.5em;
+    }
+
+    & span {
+        overflow-y: scroll;
+        display: block;
+        // overflow: hidden;
+        // text-overflow: ellipsis;
+        // -webkit-line-clamp: 1;
+        // -webkit-box-orient: vertical;
+
+        margin: 4px 0;
+
+        @include small-tablet {
+            margin: 0.375em 0;
+        }
+    }
+}
+
+.fieldCitation {
+    overflow-y: scroll;
+    max-height: 9.15em;
+}
+
+.fieldDoi {
+    overflow-y: scroll;
+    max-height: 3.625rem;
+}
+
+.btnUpload {
+    margin: 0 auto;
+
+    max-width: 143px;
+    padding: 4px;
+
+    @include small-tablet {
+        max-width: 16.875em;
+        padding: 0.625em 1.875em;
+
+        margin-top: 0.3125em;
+    }
+}
+
+.uploadText {
+    margin: 0;
+
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--dark-color);
+    text-transform: uppercase;
+
+    @include small-tablet {
+        padding-top: 0.75em;
+        padding-bottom: 0.75em;
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+
+        border: 3px dashed var(--main-color);
+        border-radius: 0.5625em;
+    }
+}
+
+.bottom {
+    display: flex;
+    justify-content: center;
+    column-gap: 3.625rem;
+}
+
+.btn {
+    max-width: 87px;
+    width: 100%;
+    padding: 4px;
+
+    @include small-tablet {
+        max-width: 11.875em;
+        padding: 0.625em 0;
+    }
+}
+
+.fieldError {
+    border-color: var(--error-color);
+}
+
+.errorText {
+    padding-left: 0.5em;
+    font-size: 0.75rem;
+    font-weight: 500;
+    line-height: 1.4em;
+    letter-spacing: -0.01em;
+    color: var(--error-color);
+}
+
+.view {
+    animation: viewMob 1s;
+
+    @include small-tablet {
+        animation: view 1s;
+    }
+}
+
+.hidden {
+    animation: hiddMob 1s;
+
+    @include small-tablet {
+        animation: hidd 1s;
+    }
+}
+
+@keyframes view {
+    0% {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    100% {
+        opacity: 1;
+        pointer-events: all;
+    }
+}
+
+@keyframes hidd {
+    0% {
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    100% {
+        opacity: 0;
+        pointer-events: none;
+    }
+}
+
+@keyframes viewMob {
+    0% {
+        background-color: rgba($color: #000000, $alpha: 0);
+    }
+
+    100% {
+        background-color: rgba($color: #000000, $alpha: 0.3);
+    }
+}
+
+@keyframes hiddMob {
+    0% {
+        background-color: rgba($color: #000000, $alpha: 0.3);
+    }
+
+    100% {
+        background-color: rgba($color: #000000, $alpha: 0);
+    }
+}
+
+.viewModal {
+    animation: viewModal 1s;
+
+    @include small-tablet {
+        animation: none;
+    }
+}
+
+.hiddenModal {
+    animation: hiddModal 1s;
+
+    @include small-tablet {
+        animation: none;
+    }
+}
+
+@keyframes viewModal {
+    0% {
+        transform: translate(0, 100%);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes hiddModal {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(0, 100%);
+    }
+}
+
+.isCopyLabel {
+    display: block;
+    width: 100%;
+    text-align: center;
+    color: rgb(129, 150, 71);
+}

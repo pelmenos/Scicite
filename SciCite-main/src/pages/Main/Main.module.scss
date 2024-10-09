@@ -1,0 +1,92 @@
+@import 'app/styles/mixins/breakpoint.scss';
+
+.main {
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+
+  height: calc(100vh - 55px);
+
+  background-color: var(--light-gray-color);
+
+  @include small-tablet {
+    height: calc(100vh - 5.25rem);
+  }
+
+  &__container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    padding-right: 60px;
+    padding-left: 45px;
+
+    @include small-tablet {
+      padding: 0 10px;
+    }
+  }
+
+  &__content {
+    max-width: 46.875rem;
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 20px;
+
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--dark-color);
+    text-transform: uppercase;
+
+    @include small-tablet {
+      margin-bottom: 0.3519em;
+
+      font-size: 3.375rem;
+    }
+  }
+
+  &__subtitle {
+    margin: 0;
+    margin-bottom: 1.25em;
+
+    font-size: 1.6667rem;
+    font-weight: 400;
+    color: var(--dark-color);
+    text-transform: uppercase;
+
+    @include small-tablet {
+      margin-bottom: 1.625em;
+
+      font-size: 1.5rem;
+    }
+  }
+
+  &__btnsBlock {
+    display: flex;
+    column-gap: 13px;
+
+    @include small-tablet {
+      column-gap: 3.9375rem;
+    }
+  }
+
+  &__btn {
+    min-width: 117px;
+
+    padding: 4px;
+
+    text-align: center;
+
+    font-size: 1.3333rem;
+    font-weight: 400;
+
+    @include small-tablet {
+      min-width: unset;
+      padding: 1.0417em;
+
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+  }
+}

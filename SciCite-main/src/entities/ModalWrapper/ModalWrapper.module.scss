@@ -1,0 +1,90 @@
+@import 'app/styles/mixins/breakpoint.scss';
+
+.substrate {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1010;
+
+    width: 100%;
+    height: 100%;
+
+    @include small-tablet {
+        background-color: rgba($color: #000000, $alpha: 0.3);
+    }
+
+    &_static {
+        position: static;
+        width: 100%;
+    }
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+}
+
+.view {
+    animation: view 1s;
+}
+
+.hidden {
+    animation: hidd 1s;
+}
+
+@keyframes view {
+    0% {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    100% {
+        opacity: 1;
+        pointer-events: all;
+    }
+}
+
+@keyframes hidd {
+    0% {
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    100% {
+        opacity: 0;
+        pointer-events: none;
+    }
+}
+
+.viewModal {
+    animation: viewModal 1s;
+}
+
+.hiddenModal {
+    animation: hiddModal 1s;
+}
+
+
+@keyframes viewModal {
+    0% {
+        transform: translate(0, 100%);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes hiddModal {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(0, 100%);
+    }
+}

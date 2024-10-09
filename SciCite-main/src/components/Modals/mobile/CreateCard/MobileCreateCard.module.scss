@@ -1,0 +1,387 @@
+@import 'app/styles/mixins/breakpoint.scss';
+
+.substrate {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1010;
+
+    background-color: rgba($color: #000000, $alpha: 0.3);
+
+    width: 100%;
+    height: 100%;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+}
+
+.modalCreateCard {
+    user-select: none;
+    cursor: default;
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+
+    padding-bottom: 27px;
+    background-color: var(--light-color);
+    box-shadow: 0px 0px 0.25rem 0px rgba(0, 0, 0, 0.25);
+
+    &__top {
+        background-color: var(--main-color);
+
+        height: 7px;
+    }
+
+    &__info {
+        padding: 16px 20px;
+        padding-bottom: 10px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        row-gap: 10px;
+    }
+
+    &__infoTop {
+        width: 390px;
+        position: relative;
+        z-index: 1;
+        display: flex;
+        column-gap: 20px;
+    }
+
+    &__fieldsBlock {
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+
+        max-width: 228px;
+        width: 100%;
+    }
+
+    &__input {
+        width: 100%;
+        height: 23px;
+
+        border-radius: 0.5em;
+        border: 2px solid var(--main-color);
+        background: var(--light-gray-color);
+        padding: 4px;
+
+        font-size: 1rem;
+        font-weight: 400;
+        color: var(--dark-color);
+        text-transform: uppercase;
+
+        &::placeholder {
+            font-size: inherit;
+            font-weight: inherit;
+            color: inherit;
+            text-transform: inherit;
+        }
+    }
+
+    &__textContainer {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__label {
+        padding-left: 9px;
+
+        font-size: 1rem;
+        font-weight: 400;
+        color: var(--dark-color);
+        text-transform: uppercase;
+    }
+
+    &__textAbstract {
+        resize: none;
+        padding: 0.875em;
+        width: 390px;
+        height: auto;
+        aspect-ratio: 390/143;
+        border-radius: 12px;
+        border: 1px solid var(--dark-color);
+
+        font-size: 1rem;
+        font-weight: 400;
+        color: var(--dark-color);
+        text-transform: uppercase;
+    }
+
+    &__term {
+        max-width: 390px;
+        width: 100%;
+    }
+
+    &__termTitle {
+        margin: 0;
+        margin-bottom: 10px;
+
+        font-size: 1rem;
+        font-weight: 400;
+        color: var(--dark-color);
+        text-transform: uppercase;
+    }
+
+    &__textKeywords {
+        resize: none;
+        padding: 0.875em;
+        width: 390px;
+        height: auto;
+        aspect-ratio: 390/46;
+        border-radius: 12px;
+        border: 1px solid var(--dark-color);
+
+        font-size: 1rem;
+        font-weight: 400;
+        color: var(--dark-color);
+        text-transform: uppercase;
+    }
+
+    &__btnBlock {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__btn {
+        max-width: fit-content;
+        width: 100%;
+
+        padding: 2px;
+    }
+
+    &__citationBlock {
+        position: absolute;
+        bottom: 570px;
+        left: 0;
+
+        background-color: var(--light-color);
+
+        width: 100%;
+    }
+
+    .submodalWrapper {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        padding: 20px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        column-gap: 57px;
+    }
+
+    .citationWrapper {
+        max-width: 223px;
+        width: 100%;
+    }
+
+    &__citationLabel {
+        display: block;
+
+        margin-bottom: 5px;
+
+        font-size: 1rem;
+        font-weight: 400;
+        color: var(--dark-color);
+        text-transform: uppercase;
+    }
+
+    &__bigTextArea,
+    &__smallTextArea,
+    &__shortTextArea {
+        resize: none;
+        width: 100%;
+
+        border: 1px solid #000;
+
+        font-size: 1rem;
+        font-weight: 400;
+        color: var(--dark-color);
+        text-transform: uppercase;
+    }
+
+    &__bigTextArea {
+        border-radius: 7px;
+        height: 73px;
+
+        &:not(:last-child) {
+            margin-bottom: 10px;
+        }
+    }
+
+    &__smallTextArea,
+    &__shortTextArea {
+        border-radius: 5px;
+        height: 18px;
+    }
+
+    &__shortTextArea {
+        margin-bottom: 9px;
+    }
+
+    &__smallTextArea {
+        height: 30px;
+    }
+}
+
+.preview {
+    overflow: hidden;
+    position: relative;
+
+    border-radius: 9px;
+
+    min-width: 142px;
+    height: auto;
+    aspect-ratio: 142/155;
+
+    padding: 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & button {
+        text-align: center;
+
+        font-size: 12px;
+        font-weight: 400;
+        color: var(--dark-color);
+        text-transform: uppercase;
+    }
+
+    & img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: -1;
+        transform: translate(-50%, -50%);
+
+        height: 100%;
+    }
+}
+
+.topText {
+    max-width: 27.6875em;
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--light-color);
+    text-transform: uppercase;
+}
+
+.disabled {
+    pointer-events: none;
+    border-color: #D9D9D9;
+    background-color: var(--light-color);
+
+    color: #D9D9D9;
+}
+
+.view {
+    animation: viewMob 1s;
+
+    @include small-tablet {
+        animation: view 1s;
+    }
+}
+
+.hidden {
+    animation: hiddMob 1s;
+
+    @include small-tablet {
+        animation: hidd 1s;
+    }
+}
+
+@keyframes view {
+    0% {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    100% {
+        opacity: 1;
+        pointer-events: all;
+    }
+}
+
+@keyframes hidd {
+    0% {
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    100% {
+        opacity: 0;
+        pointer-events: none;
+    }
+}
+
+@keyframes viewMob {
+    0% {
+        background-color: rgba($color: #000000, $alpha: 0);
+    }
+
+    100% {
+        background-color: rgba($color: #000000, $alpha: 0.3);
+    }
+}
+
+@keyframes hiddMob {
+    0% {
+        background-color: rgba($color: #000000, $alpha: 0.3);
+    }
+
+    100% {
+        background-color: rgba($color: #000000, $alpha: 0);
+    }
+}
+
+.viewModal {
+    animation: viewModal 1s;
+
+    @include small-tablet {
+        animation: none;
+    }
+}
+
+.hiddenModal {
+    animation: hiddModal 1s;
+
+    @include small-tablet {
+        animation: none;
+    }
+}
+
+@keyframes viewModal {
+    0% {
+        transform: translate(0, 100%);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes hiddModal {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(0, 100%);
+    }
+}

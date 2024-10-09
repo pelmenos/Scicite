@@ -1,0 +1,105 @@
+@import 'app/styles/mixins/breakpoint.scss';
+
+.substrate {
+    width: 100%;
+
+    @include small-tablet {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1010;
+
+        background-color: rgba($color: #000000, $alpha: 0.3);
+
+        height: 100%;
+    }
+}
+
+.overlay {
+    @include small-tablet {
+        position: fixed;
+        top: 0;
+        left: 0;
+
+        width: 100vw;
+        height: 100vh;
+
+    }
+}
+
+.modalProlong {
+    user-select: none;
+    cursor: default;
+
+    margin: 0 auto;
+
+    padding-bottom: 10px;
+    max-width: 390px;
+    width: 100%;
+
+    background-color: var(--light-gray-color);
+
+    display: flex;
+    flex-direction: column;
+
+    @include small-tablet {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        background-color: var(--light-color);
+        margin: 0;
+
+        padding: 25px 42px;
+        max-width: 505px;
+        box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
+    }
+}
+
+.btn {
+    margin: 0 auto;
+    margin-top: 10px;
+
+    padding: 4px;
+
+    @include small-tablet {
+        margin-top: 53px;
+
+        max-width: 190px;
+        width: 100%;
+        padding: 10px 0;
+    }
+}
+
+.view {
+    animation: viewModal 1s;
+}
+
+.hidden {
+    animation: hiddModal 1s;
+}
+
+@keyframes viewModal {
+    0% {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    100% {
+        opacity: 1;
+        pointer-events: all;
+    }
+}
+
+@keyframes hiddModal {
+    0% {
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    100% {
+        opacity: 0;
+        pointer-events: none;
+    }
+}

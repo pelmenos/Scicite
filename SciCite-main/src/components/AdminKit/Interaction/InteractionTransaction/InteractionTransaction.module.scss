@@ -1,0 +1,159 @@
+@import 'app/styles/mixins/disable-mob-hover.scss';
+
+.top {
+    margin-bottom: 3.125rem;
+
+    display: flex;
+    align-items: center;
+    column-gap: 28.4375rem;
+}
+
+.filterBtn {
+    display: flex;
+    align-items: center;
+    column-gap: 0.1875em;
+
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--dark-color);
+    text-transform: uppercase;
+
+    & svg {
+        fill: none;
+        width: 0.625em;
+        height: 1.25em;
+    }
+
+    @include hover {
+        & span {
+            position: relative;
+
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: -2px;
+                left: 0;
+                width: 100%;
+                height: 1px;
+                background-color: var(--main-color);
+            }
+        }
+    }
+}
+
+.filterWrapper {
+    position: relative;
+}
+
+.filterOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+
+    width: 100vw;
+    height: 100vh;
+}
+
+.search {
+    position: relative;
+
+    max-width: 40.375rem;
+    width: 100%;
+}
+
+.searchField {
+    width: 100%;
+
+    border: 2px solid var(--main-color);
+    background-color: var(--light-color);
+
+    padding-top: 0.375em;
+    padding-right: 2.125em;
+    padding-bottom: 0.3125em;
+    padding-left: 1.25em;
+
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--dark-color);
+    text-transform: uppercase;
+
+    &::placeholder {
+        font-size: inherit;
+        font-weight: inherit;
+        color: inherit;
+        text-transform: inherit;
+    }
+
+    &:focus::placeholder {
+        color: transparent;
+    }
+
+}
+
+.searchBtn {
+    position: absolute;
+    top: 50%;
+    right: 1.0625rem;
+    transform: translate(0, -50%);
+
+    color: var(--dark-color);
+
+    & svg {
+        width: 1.0625rem;
+        height: 1rem;
+    }
+}
+
+.list {
+    overflow-y: scroll;
+    max-height: 43.5rem;
+
+    &::-webkit-scrollbar {
+        width: 0;
+    }
+
+    display: flex;
+    flex-wrap: wrap;
+
+    position: relative;
+    z-index: 1;
+
+    align-items: start;
+    align-content: start;
+
+    height: 100vh;
+
+    justify-content: start;
+    max-height: calc(100vh - (8.4375rem));
+}
+
+.table {
+    width: 100%;
+}
+
+.mainRow {
+    padding: 0 1.25rem 0.6875rem;
+
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 3px solid var(--dark-color);
+}
+
+.colTitle {
+    min-width: 13.875rem;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--dark-color);
+    text-transform: uppercase;
+}
+
+.colTitleBig {
+    min-width: 16.875rem;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--dark-color);
+    text-transform: uppercase;
+}

@@ -1,0 +1,101 @@
+@import 'app/styles/mixins/disable-mob-hover.scss';
+
+.searchListFilter {
+    max-width: 20.0625rem;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.875rem;
+
+    &__block {
+        background-color: var(--light-color);
+        box-shadow: 0px 0px 0.25rem 0px rgba(0, 0, 0, 0.25);
+
+        padding: 0 2.1875rem;
+        padding-top: 1.3125rem;
+        padding-bottom: 1.4375rem;
+
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    &__title {
+        margin: 0;
+        margin-bottom: 1.125em;
+
+        max-width: 11em;
+        padding-bottom: 0.5em;
+
+        border-bottom: 2px solid var(--main-color);
+
+        font-size: 1rem;
+        font-weight: 700;
+        color: var(--dark-color);
+        text-transform: uppercase;
+    }
+
+    &__fieldWrapper {
+
+        &:not(:last-child) {
+            margin-bottom: 1.1429em;
+        }
+
+        display: flex;
+        align-items: center;
+        column-gap: 0.9286em;
+
+
+        font-size: 0.875rem;
+        font-weight: 400;
+        color: var(--dark-color);
+        text-transform: uppercase;
+    }
+
+    &__field {
+        margin: 0;
+
+        width: 1.25rem;
+        height: 1.25rem;
+
+        border: 2px solid var(--main-color);
+        border-radius: 0.3125rem;
+
+        @include hover {
+            border-color: #569ED4;
+        }
+
+        &:active {
+            border-color: #1A4666;
+        }
+
+        &:checked {
+            background-color: var(--main-color);
+            background-image: url(../../../assets/img/svg/tick.svg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 0.875rem 0.75rem;
+
+            @include hover {
+                background-color: #569ED4;
+            }
+
+            &:active {
+                background-color: #1A4666;
+            }
+        }
+
+        &:disabled {
+            border-color: #D9D9D9;
+
+            @include hover {
+                background-color: #D9D9D9;
+            }
+
+            &:active {
+                background-color: #D9D9D9;
+            }
+        }
+    }
+}
