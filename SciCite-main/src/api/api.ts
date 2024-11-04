@@ -1,8 +1,10 @@
 import axios from "axios";
 import i18next from "i18next";
 
+const API_URL: string = 'http://90.156.171.45'
+
 export const instance = axios.create({
-    baseURL: "https://scisource.ru/api/v1/",
+    baseURL: `${API_URL}/api/v1/`,
     withCredentials: true,
 })
 
