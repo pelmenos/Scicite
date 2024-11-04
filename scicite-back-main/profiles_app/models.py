@@ -6,6 +6,7 @@ from offers_app.models import Offers
 from utils.choices import (AchievementChoices, LevelsChoices,
                            TransactionsBasisChoices, TransactionsTypeChoices)
 from utils.models_abstract import BaseModel, ServiceModel
+from .managers import CustomUserManager
 
 
 class User(AbstractUser, BaseModel):
@@ -50,6 +51,9 @@ class User(AbstractUser, BaseModel):
         verbose_name="Полное имя",
         null=True
     )
+
+    objects = CustomUserManager()
+
     def __str__(self):
         return self.login
 

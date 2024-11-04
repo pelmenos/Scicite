@@ -28,6 +28,7 @@ from profiles_app.models import (Counter, Notification, Transacitons, User,
                                  UserAchievement)
 from utils.custom_permissions import CustomPermission
 from utils.email import EmailSender
+from scicite_project_hpace.settings.base import APP_URL
 
 
 class UserViewSet(ResponseHandlerMixin, viewsets.ModelViewSet):
@@ -87,7 +88,7 @@ class UserViewSet(ResponseHandlerMixin, viewsets.ModelViewSet):
                 uid = urlsafe_base64_encode(force_bytes(user.pk))
                 token = default_token_generator.make_token(user)
                 subject = "Подтверждение почты"
-                verification_link = f"https://scisource.ru/main?edit_email&uid={uid}&token={token}"
+                verification_link = f"{APP_URL}/main?edit_email&uid={uid}&token={token}"
                 html_message = render_to_string('mail/change_mail.html', {'link': verification_link})
                 EmailSender(
                     settings.EMAIL_HOST, settings.EMAIL_PORT,
@@ -231,6 +232,9 @@ class UserAdminView(ResponseHandlerMixin, APIView):
                 'count_created_cards', 'count_created_offers',
             
             ).first()
+
+            count_created_cards = 0
+            count_created_offers = 0
 
             if counter_data:
                 count_created_cards = counter_data['count_created_cards'] or 0

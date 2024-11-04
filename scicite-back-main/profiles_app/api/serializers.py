@@ -1,16 +1,13 @@
 from django.conf import settings
 from django.contrib.auth import password_validation
 from django.contrib.auth.tokens import default_token_generator
-from django.contrib.sites.shortcuts import get_current_site
-from django.core.mail import EmailMultiAlternatives
-from django.core.validators import EmailValidator
 from django.db import models
 from django.template.loader import render_to_string
-from django.urls import reverse
 from django.utils.encoding import force_bytes
 from django.utils.http import urlsafe_base64_encode
 from rest_framework import serializers
 from rest_framework.validators import UniqueValidator
+from scicite_project_hpace.settings.base import APP_URL
 
 from profiles_app.models import (Counter, Levels, Notification, Permission,
                                  Role, RolePermission, SettingsModel,
@@ -19,7 +16,6 @@ from cards_app.models import Cards
 from offers_app.models import Offers
 
 from utils.email import EmailSender
-from utils.serializer_dynamic import DynamicFieldsSerializer
 from utils.statistic import get_user_statistic
 
 
@@ -85,7 +81,6 @@ class UserRegistrationSerializer(serializers.ModelSerializer):
     def validate_password(self, value):
         password_validation.validate_password(value)
         return value
-    
 
     def validate(self, data):
         password = data.get('password')
@@ -113,7 +108,7 @@ class UserRegistrationSerializer(serializers.ModelSerializer):
         settings = SettingsModel.objects.first()
         user.balance = settings.welcome_bonus
         user.roles = role_obj
-        user.username=validated_data['login']
+        user.username = validated_data['login']
         user.save()
         self.send_verification_email(user)
         return user
@@ -121,7 +116,7 @@ class UserRegistrationSerializer(serializers.ModelSerializer):
     def send_verification_email(self, user):
         token = default_token_generator.make_token(user)
         uid = urlsafe_base64_encode(force_bytes(user.pk))
-        verification_link = f"https://scicite.com/main?uid={uid}&token={token}"
+        verification_link = f"{APP_URL}/main?uid={uid}&token={token}"
         subject = 'Подтвердите ваш email'
         recipient_list = [user.email]
 

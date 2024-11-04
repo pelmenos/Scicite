@@ -4,7 +4,6 @@ from pathlib import Path
 
 from decouple import config
 from django.utils.translation import gettext_lazy as _
-from django.utils.translation import gettext_noop
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 EMAILS_XLS_PATH = os.path.join(BASE_DIR, 'profiles_app', 'emails.xlsx')
@@ -16,6 +15,8 @@ DEBUG = config('DEBUG', default='False')
 ALLOWED_HOSTS = [
     "*"
 ]
+
+APP_URL = config('APP_URL', 'http://localhost')
 
 INSTALLED_APPS = [
     'django.contrib.admin',
