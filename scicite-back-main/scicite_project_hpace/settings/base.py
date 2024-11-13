@@ -16,8 +16,10 @@ ALLOWED_HOSTS = [
     "*"
 ]
 CSRF_TRUSTED_ORIGINS = [
-    'https://scisite.ru'
-],
+    'https://scisite.ru',
+    'https://www.scicite.ru',
+]
+
 
 APP_URL = config('APP_URL', 'http://localhost')
 
