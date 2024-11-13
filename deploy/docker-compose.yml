@@ -43,6 +43,8 @@ services:
     ports:
       - 80:80
     volumes:
+      - /etc/letsencrypt/archive/scisite.ru:/etc/letsencrypt/archive/scisite.ru
+      - /etc/letsencrypt/live/scisite.ru:/etc/letsencrypt/live/scisite.ru
       - static_volume:/home/app/web/staticfiles
       - media_volume:/home/app/web/mediafiles
     depends_on:
