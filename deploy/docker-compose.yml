@@ -41,7 +41,8 @@ services:
     container_name: scicite_nginx
     restart: on-failure
     ports:
-      - 80:80
+      - "80:80"
+      - "443:443"
     volumes:
       - /etc/letsencrypt/archive/scisite.ru:/etc/letsencrypt/archive/scisite.ru
       - /etc/letsencrypt/live/scisite.ru:/etc/letsencrypt/live/scisite.ru
