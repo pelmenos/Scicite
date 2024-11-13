@@ -22,6 +22,7 @@ services:
   db:
     image: postgres:14-alpine
     container_name: scicite_db
+    restart: always
     volumes:
       - postgres_data:/var/lib/postgresql/data/
     env_file:
