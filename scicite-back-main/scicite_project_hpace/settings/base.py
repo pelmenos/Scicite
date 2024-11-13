@@ -15,6 +15,9 @@ DEBUG = config('DEBUG', default='False')
 ALLOWED_HOSTS = [
     "*"
 ]
+CSRF_TRUSTED_ORIGINS = [
+    'https://scisite.ru'
+],
 
 APP_URL = config('APP_URL', 'http://localhost')
 
